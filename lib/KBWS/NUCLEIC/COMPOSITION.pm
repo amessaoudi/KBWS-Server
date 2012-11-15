@@ -39,8 +39,7 @@ sub _runWeblogo {
 	$title= $param{title};
     }
 
-    my $outfile= '/var/www/kbws/result/'.$jobid.'.'.$format;
-
+    my $outfile= './result/'.$jobid.'.'.$format;
 
     my $ua= LWP::UserAgent->new();
 
@@ -59,7 +58,7 @@ sub _runWeblogo {
     print $fh $res->content();
     close $fh;
 
-    my $result_url= 'http://133.27.247.144/kbws/result/'.$jobid.'.'.$format;
+    my $result_url= 'http://soap.g-language.org/kbws/result/'.$jobid.'.'.$format;
     _write_file($result_url => $jobid, 'out');
 }
 
