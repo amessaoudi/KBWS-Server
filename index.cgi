@@ -102,6 +102,7 @@ if (!$q->param('query')) {
     if (scalar $result =~ /^SOAP::Data/) {
 	# $result is SOAP::Data object
 
+	print $q->header(-type => 'text/plane');
 	# decode SOAP::Data object and encode to simple string
 	if ($#{$result->{_value}} == 0) {
 	    print ${$result->{_value}}[0];
@@ -110,7 +111,7 @@ if (!$q->param('query')) {
 	}
     } elsif ($result eq 'Undefined Method') {
 	# called undefined method by user
-	print $q->header(-status => '404 Not Found');	
+	print $q->header(-status => '404 Not Found');
     } else {
 	# $result is plain text
 	print $q->header(-type => 'text/plane').$result;

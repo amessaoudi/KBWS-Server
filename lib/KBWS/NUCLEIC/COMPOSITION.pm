@@ -46,11 +46,9 @@ sub _runWeblogo {
     my $request= $ua->get('http://weblogo.threeplusone.com/create.cgi');
     my $form= HTML::Form->parse($request->decoded_content(), $request->base());
 
-    my %param= (sequences => $seq, format => $format, logo_title => $title);
-
-    for (keys %param) {
-	$form->value($_, $param{$_});
-    }
+    $form->value('sequences'  => $seq);
+    $form->value('format'     => $format);
+    $form->value('logo_title' => $title);
 
     my $res = _process_request($ua, $form->click('cmd_create'));
 

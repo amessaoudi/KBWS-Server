@@ -15,15 +15,12 @@ sub checkStatus {
     my $self=  shift;
     my $jobid= shift;
 
-    my $q= CGI->new();
-    my $return = $self eq 'REST' ? $q->header(-type=>'text/plain') : '';
-
     unless ($jobid) {
-        return $return.-1;
+        return -1;
     } elsif (-e './result/'.$jobid.'.out') {
-        return $return.1;
+        return 1;
     } else {
-        return $return.0;
+        return 0;
     }
 }
 
@@ -44,9 +41,7 @@ sub getResult {
     my $self=  shift;
     my $jobid= shift;
 
-    my $q= CGI->new();
-    my $result = $q->header(-type=>'text/plain');
-
+    my $result= '';
     if ($jobid && _is_valid_jobid($jobid)) {
 	open my $FILE, '<', "./result/$jobid.out";
 	while (<$FILE>) {
