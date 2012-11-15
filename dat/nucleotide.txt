@@ -1,0 +1,230 @@
+DDBJ:DDBJ -> DDBJ Release and New data includes all division
+DDBJ:DDBJ_EXEST -> DDBJ Release and New data except EST division
+DDBJ:DDBJNEW -> DDBJ New data includes all division
+DDBJ:DDBJNEW_EXEST -> DDBJ New data except EST division
+DDBJ:ddbjbct -> DDBJ Bacteria division
+DDBJ:ddbjenv -> DDBJ Env division
+DDBJ:ddbjest -> DDBJ EST division
+DDBJ:ddbjgss -> DDBJ Genome Survey Sequences division
+DDBJ:ddbjhtg -> DDBJ High Throughput Genomic sequencing division
+DDBJ:ddbjhum -> DDBJ human division
+DDBJ:ddbjinv -> DDBJ invertebrates division
+DDBJ:ddbjmam -> DDBJ other mammals division
+DDBJ:ddbjpat -> DDBJ patens division
+DDBJ:ddbjphg -> DDBJ phages division
+DDBJ:ddbjpln -> DDBJ plants, fugi and algae division
+DDBJ:ddbjpri -> DDBJ primates division
+DDBJ:ddbjrna -> DDBJ rna (structual RNAs) division
+DDBJ:ddbjrod -> DDBJ rodents division
+DDBJ:ddbjsts -> DDBJ sts division
+DDBJ:ddbjsyn -> DDBJ synthetic sequences division
+DDBJ:ddbjtsa -> DDBJ TSA(Transcriptome Shotgun Assembly) division
+DDBJ:ddbjuna -> DDBJ unannotated sequences division
+DDBJ:ddbjvrl -> DDBJ viruses division
+DDBJ:ddbjvrt -> DDBJ other vertebrates division
+DDBJ:est_atha -> A.thaliana
+DDBJ:est_btra -> B.taurus
+DDBJ:est_cele -> C.elegans
+DDBJ:est_cint -> C.intestinalis
+DDBJ:est_crei -> C.reinhardtii
+DDBJ:est_ddis -> D.discoideum
+DDBJ:est_dmel -> D.melanogaster
+DDBJ:est_drer -> D.rerio
+DDBJ:est_ggal -> G.gallus
+DDBJ:est_gmax -> G.max
+DDBJ:est_hum -> H.sapiens
+DDBJ:est_hvul -> H.vulgare
+DDBJ:est_mous -> M.musculus
+DDBJ:est_mtru -> M.truncatula
+DDBJ:est_osat -> O.sativa
+DDBJ:est_rnor -> R.norvegicus
+DDBJ:est_slyc -> S.lycopersicum
+DDBJ:est_taes -> T.aestivum
+DDBJ:est_xlae -> X.laevis
+DDBJ:est_xtro -> X.tropicalis
+DDBJ:est_zmay -> Z.mays
+DDBJ:est_rest -> Others
+EBI:em_rel -> EMBL Release
+EBI:emnew -> EMBL Updates
+EBI:emblcds -> EMBL Coding Sequence
+EBI:em_rel_env -> All EMBL Environmental
+EBI:em_rel_est_env -> EMBL EST Environmental
+EBI:em_rel_gss_env -> EMBL GSS Environmental
+EBI:em_rel_htc_env -> EMBL HTC Environmental
+EBI:em_rel_htg_env -> EMBL HTG Environmental
+EBI:em_rel_pat_env -> EMBL Patent Environmental
+EBI:em_rel_std_env -> EMBL Standard Environmental
+EBI:em_rel_fun -> All EMBL Fungi
+EBI:em_rel_est_fun -> EMBL EST Fungi
+EBI:em_rel_gss_fun -> EMBL GSS Fungi
+EBI:em_rel_htc_fun -> EMBL HTC Fungi
+EBI:em_rel_htg_fun -> EMBL HTG Fungi
+EBI:em_rel_pat_fun -> EMBL Patent Fungi
+EBI:em_rel_std_fun -> EMBL Standard Fungi
+EBI:em_rel_sts_fun -> EMBL STS Fungi
+EBI:em_rel_tsa_fun -> EMBL TSA Fungi
+EBI:em_rel_hum -> All EMBL Human
+EBI:em_rel_est_hum -> EMBL EST Human
+EBI:em_rel_gss_hum -> EMBL GSS Human
+EBI:em_rel_htc_hum -> EMBL HTC Human
+EBI:em_rel_htg_hum -> EMBL HTG Human
+EBI:em_rel_pat_hum -> EMBL Patent Human
+EBI:em_rel_std_hum -> EMBL Standard Human
+EBI:em_rel_sts_hum -> EMBL STS Human
+EBI:em_rel_inv -> All EMBL Invertebrate
+EBI:em_rel_est_inv -> EMBL EST Invertebrate
+EBI:em_rel_gss_inv -> EMBL GSS Invertebrate
+EBI:em_rel_htc_inv -> EMBL HTC Invertebrate
+EBI:em_rel_htg_inv -> EMBL HTG Invertebrate
+EBI:em_rel_pat_inv -> EMBL Patent Invertebrate
+EBI:em_rel_std_inv -> EMBL Standard Invertebrate
+EBI:em_rel_sts_inv -> EMBL STS Invertebrate
+EBI:em_rel_tsa_inv -> EMBL TSA Invertebrate
+EBI:em_rel_mam -> All EMBL Mammal
+EBI:em_rel_est_mam -> EMBL EST Mammal
+EBI:em_rel_gss_mam -> EMBL GSS Mammal
+EBI:em_rel_htc_mam -> EMBL HTC Mammal
+EBI:em_rel_htg_mam -> EMBL HTG Mammal
+EBI:em_rel_pat_mam -> EMBL Patent Mammal
+EBI:em_rel_std_mam -> EMBL Standard Mammal
+EBI:em_rel_sts_mam -> EMBL STS Mammal
+EBI:em_rel_tsa_mam -> EMBL TSA Mammal
+EBI:em_rel_mus -> All EMBL Mouse
+EBI:em_rel_est_mus -> EMBL EST Mouse
+EBI:em_rel_gss_mus -> EMBL GSS Mouse
+EBI:em_rel_htc_mus -> EMBL HTC Mouse
+EBI:em_rel_htg_mus -> EMBL HTG Mouse
+EBI:em_rel_pat_mus -> EMBL Patent Mouse
+EBI:em_rel_std_mus -> EMBL Standard Mouse
+EBI:em_rel_sts_mus -> EMBL STS Mouse
+EBI:em_rel_phg -> All EMBL Phage
+EBI:em_rel_gss_phg -> EMBL GSS Phage
+EBI:em_rel_htg_phg -> EMBL HTG Phage
+EBI:em_rel_pat_phg -> EMBL Patent Phage
+EBI:em_rel_std_phg -> EMBL Standard Phage
+EBI:em_rel_pln -> All EMBL Plant
+EBI:em_rel_est_pln -> EMBL EST Plant
+EBI:em_rel_gss_pln -> EMBL GSS Plant
+EBI:em_rel_htc_pln -> EMBL HTC Plant
+EBI:em_rel_htg_pln -> EMBL HTG Plant
+EBI:em_rel_pat_pln -> EMBL Patent Plant
+EBI:em_rel_std_pln -> EMBL Standard Plant
+EBI:em_rel_sts_pln -> EMBL STS Plant
+EBI:em_rel_tsa_pln -> EMBL TSA Plant
+EBI:em_rel_pro -> All EMBL Prokaryote
+EBI:em_rel_est_pro -> EMBL EST Prokaryote
+EBI:em_rel_gss_pro -> EMBL GSS Prokaryote
+EBI:em_rel_htc_pro -> EMBL HTC Prokaryote
+EBI:em_rel_htg_pro -> EMBL HTG Prokaryote
+EBI:em_rel_pat_pro -> EMBL Patent Prokaryote
+EBI:em_rel_std_pro -> EMBL Standard Prokaryote
+EBI:em_rel_sts_pro -> EMBL STS Prokaryote
+EBI:em_rel_rod -> All EMBL Rodent
+EBI:em_rel_est_rod -> EMBL EST Rodent
+EBI:em_rel_gss_rod -> EMBL GSS Rodent
+EBI:em_rel_htc_rod -> EMBL HTC Rodent
+EBI:em_rel_htg_rod -> EMBL HTG Rodent
+EBI:em_rel_pat_rod -> EMBL Patent Rodent
+EBI:em_rel_std_rod -> EMBL Standard Rodent
+EBI:em_rel_sts_rod -> EMBL STS Rodent
+EBI:em_rel_syn -> All EMBL Synthetic
+EBI:em_rel_pat_syn -> EMBL Patent Synthetic
+EBI:em_rel_std_syn -> EMBL Standard Synthetic
+EBI:em_rel_tgn -> All EMBL Transgenic
+EBI:em_rel_std_tgn -> EMBL Standard Transgenic
+EBI:em_rel_gss_tgn -> EMBL GSS Transgenic
+EBI:em_rel_unc -> All EMBL Unclassified
+EBI:em_rel_est_unc -> EMBL EST Unclassified
+EBI:em_rel_pat_unc -> EMBL Patent Unclassified
+EBI:em_rel_std_unc -> EMBL Standard Unclassified
+EBI:em_rel_vrl -> All EMBL Viral
+EBI:em_rel_gss_vrl -> EMBL GSS Viral
+EBI:em_rel_htg_vrl -> EMBL HTG Viral
+EBI:em_rel_pat_vrl -> EMBL Patent Viral
+EBI:em_rel_std_vrl -> EMBL Standard Viral
+EBI:em_rel_vrt -> All EMBL Vertebrate
+EBI:em_rel_est_vrt -> EMBL EST Vertebrate
+EBI:em_rel_gss_vrt -> EMBL GSS Vertebrate
+EBI:em_rel_htc_vrt -> EMBL HTC Vertebrate
+EBI:em_rel_htg_vrt -> EMBL HTG Vertebrate
+EBI:em_rel_pat_vrt -> EMBL Patent Vertebrate
+EBI:em_rel_std_vrt -> EMBL Standard Vertebrate
+EBI:em_rel_sts_vrt -> EMBL STS Vertebrate
+EBI:em_rel_tsa_vrt -> EMBL TSA Vertebrate
+EBI:em_rel_est -> EMBL Expressed Sequence Tag
+EBI:em_rel_gss -> EMBL Genome Survey Sequence
+EBI:em_rel_htc -> EMBL High Throughput cDNA
+EBI:em_rel_htg -> EMBL High Throughput Genome
+EBI:em_rel_pat -> EMBL Patent
+EBI:em_rel_std -> EMBL Standard
+EBI:em_rel_sts -> EMBL Sequence Tagged Site
+EBI:emall -> EMBL Release and Updates
+EBI:emvec -> EMBL Vectors
+EBI:imgtligm -> IMGT/LIGM-DB
+EBI:imgthla -> IMGT/HLA
+EBI:hgvbase -> HGVBASE
+EBI:ipdkir -> IPD-KIR
+EBI:emvec -> emvec
+NCBI:10090_genomic -> mouse genomic
+NCBI:10116_genomic -> rat genomic
+NCBI:180454_genomic -> anopheles gambiae genomic
+NCBI:7070_genomic -> red flour beetle genomic
+NCBI:7460_genomic -> honey bee genomic
+NCBI:7955_genomic -> zebrafish genomic
+NCBI:9031_genomic -> chicken genomic
+NCBI:9544_genomic -> macaca genomic
+NCBI:9598_genomic -> chimp genomic
+NCBI:9606_genomic -> human genomic
+NCBI:9615_genomic -> dog genomic
+NCBI:9913_genomic -> cow genomic
+NCBI:chromosome -> chromosomes
+NCBI:other_genomic -> other genomic
+NCBI:refseq_genomic -> refseq genomic
+NCBI:refseq_rna -> refseq rna
+NCBI:env_nt -> env_nt
+NCBI:est -> est combined
+NCBI:est_human -> est human
+NCBI:est_mouse -> est mouse
+NCBI:est_other -> est others
+NCBI:sts -> sts
+NCBI:gss -> gss
+NCBI:htgs -> htgs
+NCBI:month.est -> month est
+NCBI:month.gss -> month gss
+NCBI:month.htgs -> month htgs
+NCBI:month.nt -> month nt
+NCBI:month.patnt -> month patnt
+NCBI:month.sts -> month sts
+NCBI:monthnt -> month nt
+NCBI:Test/gpipe/9606/allcontig_and_rna -> human genomic and transcripts
+NCBI:Test/gpipe/10090/allcontig_and_rna -> mouse genomic and transcripts
+NCBI:nt -> nt, nucleotide nr
+NCBI:patnt -> pat nucleotide
+NCBI:pdbnt -> pdb nucleotide
+NCBI:wgs -> wgs
+NCBI:UniVec -> UniVec vector library
+NCBI:alu -> alu repeat
+NCBI:danio.lib -> danio rerio repeats
+NCBI:humrep -> combined human repeat libraries
+NCBI:rodents.lib -> rodents repeats
+NCBI:geo -> geo (geo)
+NCBI:cdsearch/cdd -> cdd
+NCBI:cdsearch/oasis_cog -> cog
+NCBI:cdsearch/oasis_kog -> kog
+NCBI:cdsearch/oasis_pfam -> pfam
+NCBI:cdsearch/oasis_smart -> smart
+NCBI:repeat/repeat_3055 -> Chlamydomonas reinhardtii
+NCBI:repeat/repeat_31032 -> Fugu
+NCBI:repeat/repeat_35128 -> Thalassiosira pseudonana
+NCBI:repeat/repeat_3702 -> Arabidopsis thaliana    
+NCBI:repeat/repeat_40674 -> Mammalia		      
+NCBI:repeat/repeat_4530 -> Oryza sativa	      
+NCBI:repeat/repeat_4751 -> Fungi		      
+NCBI:repeat/repeat_6238 -> Caenorhabditis briggsae 
+NCBI:repeat/repeat_6239 -> Caenorhabditis elegans  
+NCBI:repeat/repeat_7165 -> Anopheles gambiae	      
+NCBI:repeat/repeat_7227 -> Drosophila melanogaster 
+NCBI:repeat/repeat_7719 -> Ciona intestinalis      
+NCBI:repeat/repeat_7955 -> Danio rerio	      
+NCBI:repeat/repeat_9606 -> Human		      
+NCBI:repeat/repeat_9989 -> Rodentia

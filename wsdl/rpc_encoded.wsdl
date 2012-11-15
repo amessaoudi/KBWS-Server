@@ -1,0 +1,1405 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions
+   name="KBWS"
+   targetNamespace="http://soap.g-language.org/KBWS"
+   xmlns:tns="http://soap.g-language.org/KBWS"
+   xmlns="http://schemas.xmlsoap.org/wsdl/"
+   xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+   xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+   xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" >
+
+  <types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema"
+            targetNamespace="http://soap.g-language.org/KBWS"
+            xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+            xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+
+      <xsd:complexType name="blastInputParams">
+	<xsd:all>
+	  <xsd:element name="p"            type="xsd:string" />
+	  <xsd:element name="d"            type="xsd:string" />
+	  <xsd:element name="server"       type="xsd:string" />
+	  <xsd:element name="e"            type="xsd:string" />
+	  <xsd:element name="m"            type="xsd:string" />
+	  <xsd:element name="F"            type="xsd:string" />
+	  <xsd:element name="G"            type="xsd:int"    />
+	  <xsd:element name="E"            type="xsd:int"    />
+	  <xsd:element name="X"            type="xsd:string" />
+	  <xsd:element name="q"            type="xsd:int"    />
+	  <xsd:element name="r"            type="xsd:int"    />
+	  <xsd:element name="v"            type="xsd:int"    />
+ 	  <xsd:element name="b"            type="xsd:int"    />
+	  <xsd:element name="f"            type="xsd:int"    />
+	  <xsd:element name="g"            type="xsd:boolean" />
+	  <xsd:element name="M"            type="xsd:string"  />
+	  <xsd:element name="W"            type="xsd:int"     />
+	  <xsd:element name="z"            type="xsd:float"   />
+	  <xsd:element name="K"            type="xsd:int"     />
+	  <xsd:element name="Y"            type="xsd:float"   />
+	</xsd:all>
+      </xsd:complexType>
+
+      <xsd:complexType name="centroidfoldInputParams">
+	<xsd:all>
+	  <xsd:element name="model" type="xsd:string" />
+	  <xsd:element name="gamma" type="xsd:int"    />
+	</xsd:all>
+      </xsd:complexType>
+
+      <xsd:complexType name="clustalwInputParams">
+	<xsd:all>
+	  <xsd:element name="alignment"   type="xsd:string"  />
+	  <xsd:element name="output"      type="xsd:string"  />
+	  <xsd:element name="matrix"      type="xsd:string"  />
+	  <xsd:element name="outorder"    type="xsd:string"  />
+	  <xsd:element name="ktup"        type="xsd:int"     />
+	  <xsd:element name="window"      type="xsd:int"     />
+	  <xsd:element name="gapopen"     type="xsd:int"     />
+	  <xsd:element name="gapext"      type="xsd:float"   />
+	  <xsd:element name="gapdist"     type="xsd:int"     />
+	  <xsd:element name="endgaps"     type="xsd:boolean" />
+	  <xsd:element name="pairgap"     type="xsd:int"     />
+	  <xsd:element name="topdiags"    type="xsd:int"     />
+	  <xsd:element name="score"       type="xsd:string"  />
+	  <xsd:element name="quicktree"   type="xsd:boolean" />
+	  <xsd:element name="align"       type="xsd:boolean" />
+	  <xsd:element name="clustering"  type="xsd:string"  />
+	  <xsd:element name="numiter"     type="xsd:int"     />
+	  <xsd:element name="iteration"   type="xsd:string"  />
+	  <xsd:element name="pwmatrix"    type="xsd:string"  />
+	  <xsd:element name="pwdnamatrix" type="xsd:string"  />
+	  <xsd:element name="pwgapopen"   type="xsd:int"     />
+	  <xsd:element name="pwgapext"    type="xsd:float"   />
+	  <xsd:element name="dnamatrix"   type="xsd:string"  />
+	</xsd:all>
+      </xsd:complexType>
+
+      <xsd:complexType name="fetchDataInputParams">
+	<xsd:all>
+	  <xsd:element name="format" type="xsd:string" />
+	  <xsd:element name="style"  type="xsd:string" />
+	</xsd:all>
+      </xsd:complexType>
+
+      <xsd:complexType name="fetchBatchInputParams">
+	<xsd:all>
+	  <xsd:element name="format" type="xsd:string" />
+	  <xsd:element name="style"  type="xsd:string" />
+	</xsd:all>
+      </xsd:complexType>
+
+      <xsd:complexType name="genemarkhmmInputParams">
+	<xsd:all>
+	  <xsd:element name="title" type="xsd:string"  />
+	  <xsd:element name="rbs"   type="xsd:boolean" />
+	  <xsd:element name="list"  type="xsd:boolean" />
+	  <xsd:element name="org"   type="xsd:string"  />
+	</xsd:all>
+      </xsd:complexType>
+
+      <xsd:complexType name="glimmerInputParams">
+	<xsd:all>
+	  <xsd:element name="gencode"  type="xsd:int"    />
+	  <xsd:element name="topology" type="xsd:string" />
+	</xsd:all>
+      </xsd:complexType>
+
+      <xsd:complexType name="kalignInputParams">
+	<xsd:all>
+	  <xsd:element name="moltype" type="xsd:string" />
+	  <xsd:element name="gpo"     type="xsd:float"  />
+	  <xsd:element name="gpe"     type="xsd:float"  />
+	  <xsd:element name="tgpe"    type="xsd:float"  />
+	  <xsd:element name="bonus"   type="xsd:float"  />
+	</xsd:all>
+      </xsd:complexType>
+
+      <xsd:complexType name="mafftInputParams">
+	<xsd:all>
+	  <xsd:element name="strategy"     type="xsd:string"  />
+	  <xsd:element name="outorder"     type="xsd:string"  />
+	  <xsd:element name="op"           type="xsd:float"   />
+	  <xsd:element name="ep"           type="xsd:float"   />
+	  <xsd:element name="scorematrix"  type="xsd:string"  />
+	  <xsd:element name="homologs"     type="xsd:boolean" />
+	  <xsd:element name="showhomologs" type="xsd:boolean" />
+	  <xsd:element name="numhomologs"  type="xsd:int"     />
+	  <xsd:element name="threshold"    type="xsd:float"   />
+	  <xsd:element name="referenceseq" type="xsd:string"  />
+	  <xsd:element name="harrplot"     type="xsd:string"  />
+	</xsd:all>
+      </xsd:complexType>
+
+      <xsd:complexType name="muscleInputParams">
+	<xsd:all>
+	  <xsd:element name="output"    type="xsd:string" />
+	  <xsd:element name="outorder"  type="xsd:string" />
+	  <xsd:element name="gapopen"   type="xsd:float"  />
+	  <xsd:element name="gapextend" type="xsd:float"  />
+	</xsd:all>
+      </xsd:complexType>
+
+      <xsd:complexType name="phobiusInputParams">
+	<xsd:all>
+	  <xsd:element name="outputformat" type="xsd:string" />
+	</xsd:all>
+      </xsd:complexType>
+
+      <xsd:complexType name="psortInputParams">
+	<xsd:all>
+	  <xsd:element name="org"   type="xsd:string" />
+	  <xsd:element name="title" type="xsd:string" />
+	</xsd:all>
+      </xsd:complexType>
+
+      <xsd:complexType name="psortbInputParams">
+	<xsd:all>
+	  <xsd:element name="format" type="xsd:string" />
+	  <xsd:element name="gram"   type="xsd:string" />
+	</xsd:all>
+      </xsd:complexType>
+
+      <xsd:complexType name="tcoffeeInputParams">
+	<xsd:all>
+	  <xsd:element name="matrix"   type="xsd:string" />
+	  <xsd:element name="outorder" type="xsd:string" />
+	</xsd:all>
+      </xsd:complexType>
+
+      <xsd:complexType name="tRNAscanInputParams">
+	<xsd:all>
+	  <xsd:element name="title"      type="xsd:string"  />
+	  <xsd:element name="mode"       type="xsd:string"  />
+	  <xsd:element name="source"     type="xsd:string"  />
+	  <xsd:element name="gcode"      type="xsd:string"  />
+	  <xsd:element name="pesudogene" type="xsd:boolean" />
+	  <xsd:element name="origin"     type="xsd:boolean" />
+	  <xsd:element name="ace"        type="xsd:boolean" />
+	  <xsd:element name="codons"     type="xsd:boolean" />
+	  <xsd:element name="fpos"       type="xsd:boolean" />
+	  <xsd:element name="breakdown"  type="xsd:boolean" />
+	  <xsd:element name="covescore"  type="xsd:string"  />
+	  <xsd:element name="euparams"   type="xsd:string"  />
+	  <xsd:element name="euscore"    type="xsd:string"  />
+	</xsd:all>
+      </xsd:complexType>
+
+      <xsd:complexType name="ssearchInputParams">
+	<xsd:all>
+	  <xsd:element name="d"            type="xsd:string"  />
+	  <xsd:element name="moltype"      type="xsd:string"  />
+	  <xsd:element name="histogram"    type="xsd:boolean" />
+	  <xsd:element name="nucleotide"   type="xsd:boolean" />
+	  <xsd:element name="topstrand"    type="xsd:boolean" />
+	  <xsd:element name="bottomstrand" type="xsd:boolean" />
+	  <xsd:element name="gapopen"      type="xsd:int"     />
+	  <xsd:element name="gapext"       type="xsd:int"     />
+	  <xsd:element name="scores"       type="xsd:int"     />
+	  <xsd:element name="alignments"   type="xsd:int"     />
+	  <xsd:element name="ktup"         type="xsd:int"     />
+	  <xsd:element name="matrix"       type="xsd:string"  />
+	  <xsd:element name="eupper"       type="xsd:float"   />
+	  <xsd:element name="elower"       type="xsd:float"   />
+	  <xsd:element name="dbrange"      type="xsd:string"  />
+	  <xsd:element name="seqrange"     type="xsd:string"  />
+	</xsd:all>
+      </xsd:complexType>
+
+      <xsd:complexType name="weblogoInputParams">
+	<xsd:all>
+	  <xsd:element name="format" type="xsd:string" />
+	</xsd:all>
+      </xsd:complexType>
+
+      <xsd:complexType name="wolfPsortInputParams">
+	<xsd:all>
+	  <xsd:element name="org" type="xsd:string" />
+	</xsd:all>
+      </xsd:complexType>
+
+      <xsd:complexType name="RNAfoldInputParams">
+	<xsd:all>
+	  <xsd:element name="method"    type="xsd:string"  />
+	  <xsd:element name="noclosegu" type="xsd:boolean" />
+	  <xsd:element name="nolp"      type="xsd:boolean" />
+	  <xsd:element name="dangling"  type="xsd:string"  />
+	  <xsd:element name="param"     type="xsd:string"  />
+	  <xsd:element name="tmp"       type="xsd:int"     />
+	  <xsd:element name="circ"      type="xsd:boolean" />
+	</xsd:all>
+      </xsd:complexType>
+
+      <xsd:complexType name="showBlastDBInputParams">
+	<xsd:all>
+	  <xsd:element name="nucleotide" type="xsd:boolean" />
+	  <xsd:element name="protein"    type="xsd:boolean" />
+	</xsd:all>
+      </xsd:complexType>
+
+    </schema>
+  </types>
+
+  <message name="runBlastRequest">
+    <part name="in0"    type="xsd:string" />
+    <part name="params" type="tns:blastInputParams" />
+  </message>
+  <message name="runBlastResponse">
+    <part name="jobid" type="xsd:string" />
+  </message>
+
+  <message name="runCentroidfoldRequest">
+    <part name="in0"    type="xsd:string" />
+    <part name="params" type="tns:centroidfoldInputParams" />
+  </message>
+  <message name="runCentroidfoldResponse">
+    <part name="jobid" type="xsd:string" />
+  </message>
+
+  <message name="runClustalwRequest">
+    <part name="in0"    type="xsd:string" />
+    <part name="params" type="tns:clustalwInputParams" />
+  </message>
+  <message name="runClustalwResponse">
+    <part name="jobid" type="xsd:string" />
+  </message>
+
+  <message name="runFetchDataRequest">
+    <part name="in0"    type="xsd:string" />
+    <part name="params" type="tns:fetchDataInputParams" />
+  </message>
+  <message name="runFetchDataResponse">
+    <part name="jobid" type="xsd:string" />
+  </message>
+
+  <message name="runFetchBatchRequest">
+    <part name="in0"    type="xsd:string" />
+    <part name="in1"    type="xsd:string" />
+    <part name="params" type="tns:fetchBatchInputParams" />
+  </message>
+  <message name="runFetchBatchResponse">
+    <part name="jobid" type="xsd:string" />
+  </message>
+
+  <message name="runGenemarkhmmRequest">
+    <part name="in0"    type="xsd:string" />
+    <part name="params" type="tns:genemarkhmmInputParams" />
+  </message>
+  <message name="runGenemarkhmmResponse">
+    <part name="jobid" type="xsd:string" />
+  </message>
+
+  <message name="runGlimmerRequest">
+    <part name="in0"    type="xsd:string" />
+    <part name="params" type="tns:glimmerInputParams" />
+  </message>
+  <message name="runGlimmerResponse">
+    <part name="jobid" type="xsd:string" />
+  </message>
+
+  <message name="runKalignRequest">
+    <part name="in0"    type="xsd:string" />
+    <part name="params" type="tns:kalignInputParams" />
+  </message>
+  <message name="runKalignResponse">
+    <part name="jobid" type="xsd:string" />
+  </message>
+
+  <message name="runMafftRequest">
+    <part name="in0"    type="xsd:string" />
+    <part name="params" type="tns:mafftInputParams" />
+  </message>
+  <message name="runMafftResponse">
+    <part name="jobid" type="xsd:string" />
+  </message>
+
+  <message name="runMuscleRequest">
+    <part name="in0"    type="xsd:string" />
+    <part name="params" type="tns:muscleInputParams" />
+  </message>
+  <message name="runMuscleResponse">
+    <part name="jobid" type="xsd:string" />
+  </message>
+
+  <message name="runPhobiusRequest">
+    <part name="in0"    type="xsd:string" />
+    <part name="params" type="tns:phobiusInputParams" />
+  </message>
+  <message name="runPhobiusResponse">
+    <part name="jobid" type="xsd:string" />
+  </message>
+
+  <message name="runProtparsRequest">
+    <part name="in0" type="xsd:string" />
+  </message>
+  <message name="runProtparsResponse">
+    <part name="jobid" type="xsd:string" />
+  </message>
+
+  <message name="runProtdistRequest">
+    <part name="in0" type="xsd:string" />
+  </message>
+  <message name="runProtdistResponse">
+    <part name="jobid" type="xsd:string" />
+  </message>
+
+  <message name="runDnaparsRequest">
+    <part name="in0" type="xsd:string" />
+  </message>
+  <message name="runDnaparsResponse">
+    <part name="jobid" type="xsd:string" />
+  </message>
+
+  <message name="runDnapennyRequest">
+    <part name="in0" type="xsd:string" />
+  </message>
+  <message name="runDnapennyResponse">
+    <part name="jobid" type="xsd:string" />
+  </message>
+
+  <message name="runDnacompRequest">
+    <part name="in0" type="xsd:string" />
+  </message>
+  <message name="runDnacompResponse">
+    <part name="jobid" type="xsd:string" />
+  </message>
+
+  <message name="runDnainvarRequest">
+    <part name="in0" type="xsd:string" />
+  </message>
+  <message name="runDnainvarResponse">
+    <part name="jobid" type="xsd:string" />
+  </message>
+
+  <message name="runDnamlRequest">
+    <part name="in0" type="xsd:string" />
+  </message>
+  <message name="runDnamlResponse">
+    <part name="jobid" type="xsd:string" />
+  </message>
+
+  <message name="runDnamlkRequest">
+    <part name="in0" type="xsd:string" />
+  </message>
+  <message name="runDnamlkResponse">
+    <part name="jobid" type="xsd:string" />
+  </message>
+
+  <message name="runDnadistRequest">
+    <part name="in0" type="xsd:string" />
+  </message>
+  <message name="runDnadistResponse">
+    <part name="jobid" type="xsd:string" />
+  </message>
+
+  <message name="runGendistRequest">
+    <part name="in0" type="xsd:string" />
+  </message>
+  <message name="runGendistResponse">
+    <part name="jobid" type="xsd:string" />
+  </message>
+
+  <message name="runSeqbootRequest">
+    <part name="in0" type="xsd:string" />
+  </message>
+  <message name="runSeqbootResponse">
+    <part name="jobid" type="xsd:string" />
+  </message>
+
+  <message name="runRestmlRequest">
+    <part name="in0" type="xsd:string" />
+  </message>
+  <message name="runRestmlResponse">
+    <part name="jobid" type="xsd:string" />
+  </message>
+
+  <message name="runCliqueRequest">
+    <part name="in0" type="xsd:string" />
+  </message>
+  <message name="runCliqueResponse">
+    <part name="jobid" type="xsd:string" />
+  </message>
+
+  <message name="runFitchRequest">
+    <part name="in0" type="xsd:string" />
+  </message>
+  <message name="runFitchResponse">
+    <part name="jobid" type="xsd:string" />
+  </message>
+
+  <message name="runKitschRequest">
+    <part name="in0" type="xsd:string" />
+  </message>
+  <message name="runKitschResponse">
+    <part name="jobid" type="xsd:string" />
+  </message>
+
+  <message name="runNeighborRequest">
+    <part name="in0" type="xsd:string" />
+  </message>
+  <message name="runNeighborResponse">
+    <part name="jobid" type="xsd:string" />
+  </message>
+
+  <message name="runContmlRequest">
+    <part name="in0" type="xsd:string" />
+  </message>
+  <message name="runContmlResponse">
+    <part name="jobid" type="xsd:string" />
+  </message>
+
+  <message name="runMixRequest">
+    <part name="in0" type="xsd:string" />
+  </message>
+  <message name="runMixResponse">
+    <part name="jobid" type="xsd:string" />
+  </message>
+
+  <message name="runPennyRequest">
+    <part name="in0" type="xsd:string" />
+  </message>
+  <message name="runPennyResponse">
+    <part name="jobid" type="xsd:string" />
+  </message>
+
+  <message name="runDollopRequest">
+    <part name="in0" type="xsd:string" />
+  </message>
+  <message name="runDollopResponse">
+    <part name="jobid" type="xsd:string" />
+  </message>
+
+  <message name="runDolpennyRequest">
+    <part name="in0" type="xsd:string" />
+  </message>
+  <message name="runDolpennyResponse">
+    <part name="jobid" type="xsd:string" />
+  </message>
+
+  <message name="runPsortRequest">
+    <part name="in0"    type="xsd:string" />
+    <part name="params" type="tns:psortInputParams" />
+  </message>
+  <message name="runPsortResponse">
+    <part name="jobid" type="xsd:string" />
+  </message>
+
+  <message name="runPsort2Request">
+    <part name="in0"    type="xsd:string" />
+  </message>
+  <message name="runPsort2Response">
+    <part name="jobid" type="xsd:string" />
+  </message>
+
+  <message name="runPsortbRequest">
+    <part name="in0"    type="xsd:string" />
+    <part name="params" type="tns:psortbInputParams" />
+  </message>
+  <message name="runPsortbResponse">
+    <part name="jobid" type="xsd:string" />
+  </message>
+
+  <message name="runSsearchRequest">
+    <part name="in0"    type="xsd:string" />
+    <part name="params" type="tns:ssearchInputParams" />
+  </message>
+  <message name="runSsearchResponse">
+    <part name="jobid" type="xsd:string" />
+  </message>
+
+  <message name="runTcoffeeRequest">
+    <part name="in0"    type="xsd:string" />
+    <part name="params" type="tns:tcoffeeInputParams" />
+  </message>
+  <message name="runTcoffeeResponse">
+    <part name="jobid" type="xsd:string" />
+  </message>
+
+  <message name="runtRNAscanRequest">
+    <part name="in0"    type="xsd:string" />
+    <part name="params" type="tns:tRNAscanInputParams" />
+  </message>
+  <message name="runtRNAscanResponse">
+    <part name="jobid" type="xsd:string" />
+  </message>
+
+  <message name="runWeblogoRequest">
+    <part name="in0"    type="xsd:string" />
+    <part name="params" type="tns:weblogoInputParams" />
+  </message>
+  <message name="runWeblogoResponse">
+    <part name="jobid" type="xsd:string" />
+  </message>
+
+  <message name="runWolfPsortRequest">
+    <part name="in0"    type="xsd:string" />
+    <part name="params" type="tns:wolfPsortInputParams" />
+  </message>
+  <message name="runWolfPsortResponse">
+    <part name="jobid" type="xsd:string" />
+  </message>
+
+  <message name="runRNAfoldRequest">
+    <part name="in0"    type="xsd:string" />
+    <part name="params" type="tns:RNAfoldInputParams" />
+  </message>
+  <message name="runRNAfoldResponse">
+    <part name="jobid" type="xsd:string" />
+  </message>
+
+  <message name="showBlastDBRequest">
+    <part name="params" type="tns:showBlastDBInputParams" />
+  </message>
+  <message name="showBlastDBResponse">
+    <part name="dblist" type="xsd:string" />
+  </message>
+
+  <message name="map2PathwayProjectorRequest">
+    <part name="in0" type="xsd:string" />
+  </message>
+  <message name="map2PathwayProjectorResponse">
+    <part name="jobid" type="xsd:string" />
+  </message>
+
+  <message name="checkStatusRequest">
+    <part name="jobid" type="xsd:string" />
+  </message>
+  <message name="checkStatusResponse">
+    <part name="status" type="xsd:int" />
+  </message>
+
+  <message name="checkStatus_retJobidRequest">
+    <part name="jobid_in"  type="xsd:string" />
+  </message>
+  <message name="checkStatus_retJobidResponse">
+    <part name="jobid_out" type="xsd:string" />
+  </message>
+
+  <message name="getResultRequest">
+    <part  name="jobid" type="xsd:string" />
+  </message>
+  <message name="getResultResponse">
+    <part  name="result" type="xsd:string" />
+  </message>
+
+  <message name="getMultiResultRequest">
+    <part  name="jobid" type="xsd:string" />
+    <part  name="type"  type="xsd:string" />
+  </message>
+  <message name="getMultiResultResponse">
+    <part  name="result" type="xsd:string" />
+  </message>
+
+
+  <portType name="KBWS">
+    <operation name="runBlast" parameterOrder="in0 params">
+      <input  name="runBlastRequest"  message="tns:runBlastRequest"  />
+      <output name="runBlastResponse" message="tns:runBlastResponse" />
+    </operation>
+
+    <operation name="runCentroidfold" parameterOrder="in0 params">
+      <input  name="runCentroidfoldRequest"  message="tns:runCentroidfoldRequest"  />
+      <output name="runCentroidfoldResponse" message="tns:runCentroidfoldResponse" />
+    </operation>
+
+    <operation name="runClustalw" parameterOrder="in0 params">
+      <input  name="runClustalwRequest"  message="tns:runClustalwRequest"  />
+      <output name="runClustalwResponse" message="tns:runClustalwResponse" />
+    </operation>
+
+    <operation name="runFetchData" parameterOrder="in0 params">
+      <input  name="runFetchDataRequest"  message="tns:runFetchDataRequest"  />
+      <output name="runFetchDataResponse" message="tns:runFetchDataResponse" />
+    </operation>
+
+    <operation name="runFetchBatch" parameterOrder="in0 in1 params">
+      <input  name="runFetchBatchRequest"  message="tns:runFetchBatchRequest"  />
+      <output name="runFetchBatchResponse" message="tns:runFetchBatchResponse" />
+    </operation>
+
+    <operation name="runGenemarkhmm" parameterOrder="in0 params">
+      <input  name="runGenemarkhmmRequest"  message="tns:runGenemarkhmmRequest"  />
+      <output name="runGenemarkhmmResponse" message="tns:runGenemarkhmmResponse" />
+    </operation>
+
+    <operation name="runGlimmer" parameterOrder="in0 params">
+      <input  name="runGlimmerRequest"  message="tns:runGlimmerRequest"  />
+      <output name="runGlimmerResponse" message="tns:runGlimmerResponse" />
+    </operation>
+
+    <operation name="runKalign" parameterOrder="in0 params">
+      <input  name="runKalignRequest"  message="tns:runKalignRequest"  />
+      <output name="runKalignResponse" message="tns:runKalignResponse" />
+    </operation>
+
+    <operation name="runMafft" parameterOrder="in0 params">
+      <input  name="runMafftRequest"  message="tns:runMafftRequest"  />
+      <output name="runMafftResponse" message="tns:runMafftResponse" />
+    </operation>
+
+    <operation name="runMuscle" parameterOrder="in0 params">
+      <input  name="runMuscleRequest"  message="tns:runMuscleRequest"  />
+      <output name="runMuscleResponse" message="tns:runMuscleResponse" />
+    </operation>
+
+    <operation name="runPhobius" parameterOrder="in0 params">
+      <input  name="runPhobiusRequest"  message="tns:runPhobiusRequest"  />
+      <output name="runPhobiusResponse" message="tns:runPhobiusResponse" />
+    </operation>
+
+    <operation name="runProtpars" parameterOrder="in0">
+      <input  name="runProtparsRequest"  message="tns:runProtparsRequest" />
+      <output name="runProtparsResponse" message="tns:runProtparsResponse" />
+    </operation>
+
+    <operation name="runProtdist" parameterOrder="in0">
+      <input  name="runProtdistRequest"  message="tns:runProtdistRequest" />
+      <output name="runProtdistResponse" message="tns:runProtdistResponse" />
+    </operation>
+
+    <operation name="runDnapars" parameterOrder="in0">
+      <input  name="runDnaparsRequest"  message="tns:runDnaparsRequest" />
+      <output name="runDnaparsResponse" message="tns:runDnaparsResponse" />
+    </operation>
+
+    <operation name="runDnapenny" parameterOrder="in0">
+      <input  name="runDnapennyRequest"  message="tns:runDnapennyRequest" />
+      <output name="runDnapennyResponse" message="tns:runDnapennyResponse" />
+    </operation>
+
+    <operation name="runDnacomp" parameterOrder="in0">
+      <input  name="runDnacompRequest"  message="tns:runDnacompRequest" />
+      <output name="runDnacompResponse" message="tns:runDnacompResponse" />
+    </operation>
+
+    <operation name="runDnainvar" parameterOrder="in0">
+      <input  name="runDnainvarRequest"  message="tns:runDnainvarRequest" />
+      <output name="runDnainvarResponse" message="tns:runDnainvarResponse" />
+    </operation>
+
+    <operation name="runDnaml" parameterOrder="in0">
+      <input  name="runDnamlRequest"  message="tns:runDnamlRequest" />
+      <output name="runDnamlResponse" message="tns:runDnamlResponse" />
+    </operation>
+
+    <operation name="runDnamlk" parameterOrder="in0">
+      <input  name="runDnamlkRequest"  message="tns:runDnamlkRequest" />
+      <output name="runDnamlkResponse" message="tns:runDnamlkResponse" />
+    </operation>
+
+    <operation name="runDnadist" parameterOrder="in0">
+      <input  name="runDnadistRequest"  message="tns:runDnadistRequest" />
+      <output name="runDnadistResponse" message="tns:runDnadistResponse" />
+    </operation>
+
+    <operation name="runGendist" parameterOrder="in0">
+      <input  name="runGendistRequest"  message="tns:runGendistRequest" />
+      <output name="runGendistResponse" message="tns:runGendistResponse" />
+    </operation>
+
+    <operation name="runSeqboot" parameterOrder="in0">
+      <input  name="runSeqbootRequest"  message="tns:runSeqbootRequest" />
+      <output name="runSeqbootResponse" message="tns:runSeqbootResponse" />
+    </operation>
+
+    <operation name="runRestml" parameterOrder="in0">
+      <input  name="runRestmlRequest"  message="tns:runRestmlRequest" />
+      <output name="runRestmlResponse" message="tns:runRestmlResponse" />
+    </operation>
+
+    <operation name="runClique" parameterOrder="in0">
+      <input  name="runCliqueRequest"  message="tns:runCliqueRequest" />
+      <output name="runCliqueResponse" message="tns:runCliqueResponse" />
+    </operation>
+
+    <operation name="runFitch" parameterOrder="in0">
+      <input  name="runFitchRequest"  message="tns:runFitchRequest" />
+      <output name="runFitchResponse" message="tns:runFitchResponse" />
+    </operation>
+
+    <operation name="runKitsch" parameterOrder="in0">
+      <input  name="runKitschRequest"  message="tns:runKitschRequest" />
+      <output name="runKitschResponse" message="tns:runKitschResponse" />
+    </operation>
+
+    <operation name="runNeighbor" parameterOrder="in0">
+      <input  name="runNeighborRequest"  message="tns:runNeighborRequest" />
+      <output name="runNeighborResponse" message="tns:runNeighborResponse" />
+    </operation>
+
+    <operation name="runContml" parameterOrder="in0">
+      <input  name="runContmlRequest"  message="tns:runContmlRequest" />
+      <output name="runContmlResponse" message="tns:runContmlResponse" />
+    </operation>
+
+    <operation name="runMix" parameterOrder="in0">
+      <input  name="runMixRequest"  message="tns:runMixRequest"  />
+      <output name="runMixResponse" message="tns:runMixResponse" />
+    </operation>
+
+    <operation name="runPenny" parameterOrder="in0">
+      <input  name="runPennyRequest"  message="tns:runPennyRequest"  />
+      <output name="runPennyResponse" message="tns:runPennyResponse" />
+    </operation>
+
+    <operation name="runDollop" parameterOrder="in0">
+      <input  name="runDollopRequest"  message="tns:runDollopRequest"  />
+      <output name="runDollopResponse" message="tns:runDollopResponse" />
+    </operation>
+
+    <operation name="runDolpenny" parameterOrder="in0">
+      <input  name="runDolpennyRequest"  message="tns:runDolpennyRequest"  />
+      <output name="runDolpennyResponse" message="tns:runDolpennyResponse" />
+    </operation>
+
+    <operation name="runPsort" parameterOrder="in0 params">
+      <input  name="runPsortRequest"  message="tns:runPsortRequest"  />
+      <output name="runPsortResponse" message="tns:runPsortResponse" />
+    </operation>
+
+    <operation name="runPsort2" parameterOrder="in0">
+      <input  name="runPsort2Request"  message="tns:runPsort2Request"  />
+      <output name="runPsort2Response" message="tns:runPsort2Response" />
+    </operation>
+
+    <operation name="runPsortb" parameterOrder="in0 params">
+      <input  name="runPsortbRequest"  message="tns:runPsortbRequest"  />
+      <output name="runPsortbResponse" message="tns:runPsortbResponse" />
+    </operation>
+
+    <operation name="runSsearch" parameterOrder="in0 params">
+      <input  name="runSsearchRequest"  message="tns:runSsearchRequest"  />
+      <output name="runSsearchResponse" message="tns:runSsearchResponse" />
+    </operation>
+
+    <operation name="runTcoffee" parameterOrder="in0 params">
+      <input  name="runTcoffeeRequest"  message="tns:runTcoffeeRequest"  />
+      <output name="runTcoffeeResponse" message="tns:runTcoffeeResponse" />
+    </operation>
+
+    <operation name="runtRNAscan" parameterOrder="in0 params">
+      <input  name="runtRNAscanRequest"  message="tns:runtRNAscanRequest"  />
+      <output name="runtRNAscanResponse" message="tns:runtRNAscanResponse" />
+    </operation>
+
+    <operation name="runWeblogo" parameterOrder="in0 params">
+      <input  name="runWeblogoRequest"  message="tns:runWeblogoRequest"  />
+      <output name="runWeblogoResponse" message="tns:runWeblogoResponse" />
+    </operation>
+
+    <operation name="runWolfPsort" parameterOrder="in0 params">
+      <input  name="runWolfPsortRequest"  message="tns:runWolfPsortRequest"  />
+      <output name="runWolfPsortResponse" message="tns:runWolfPsortResponse" />
+    </operation>
+
+    <operation name="runRNAfold" parameterOrder="in0 params">
+      <input  name="runRNAfoldRequest"  message="tns:runRNAfoldRequest"  />
+      <output name="runRNAfoldResponse" message="tns:runRNAfoldResponse" />
+    </operation>
+
+    <operation name="showBlastDB" parameterOrder="params">
+      <input  name="showBlastDBRequest"  message="tns:showBlastDBRequest"  />
+      <output name="showBlastDBResponse" message="tns:showBlastDBResponse" />
+    </operation>
+
+    <operation name="map2PathwayProjector" parameterOrder="in0">
+      <input  name="map2PathwayProjectorRequest"  message="tns:map2PathwayProjectorRequest"  />
+      <output name="map2PathwayProjectorResponse" message="tns:map2PathwayProjectorResponse" />
+    </operation>
+
+    <operation name="checkStatus" parameterOrder="jobid">
+      <input  name="checkStatusRequest"  message="tns:checkStatusRequest"  />
+      <output name="checkStatusResponse" message="tns:checkStatusResponse" />
+    </operation>
+
+    <operation name="checkStatus_retJobid" parameterOrder="jobid_in">
+      <input  name="checkStatus_retJobidRequest"  message="tns:checkStatus_retJobidRequest"  />
+      <output name="checkStatus_retJobidResponse" message="tns:checkStatus_retJobidResponse" />
+    </operation>
+
+    <operation name="getResult" parameterOrder="jobid">
+      <input  name="getResultRequest"  message="tns:getResultRequest"  />
+      <output name="getResultResponse" message="tns:getResultResponse" />
+    </operation>
+
+    <operation name="getMultiResult" parameterOrder="jobid type">
+      <input  name="getMultiResultRequest"  message="tns:getMultiResultRequest"  />
+      <output name="getMultiResultResponse" message="tns:getMultiResultResponse" />
+    </operation>
+  </portType>
+
+  <binding name="KBWSSoapBinding" type="tns:KBWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <operation name="runBlast">
+      <soap:operation soapAction="http://soap.g-language.org/KBWS#runBlast" />
+      <input name="runBlastRequest">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </input>
+      <output name="runBlastResponse">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </output>
+    </operation>
+
+    <operation name="runCentroidfold">
+      <soap:operation soapAction="http://soap.g-language.org/KBWS#runCentroidfold" />
+      <input name="runCentroidfoldRequest">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </input>
+      <output name="runCentroidfoldResponse">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </output>
+    </operation>
+
+    <operation name="runClustalw">
+      <soap:operation soapAction="http://soap.g-language.org/KBWS#runClustalw" />
+      <input name="runClustalwRequest">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </input>
+      <output name="runClustalwResponse">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </output>
+    </operation>
+
+    <operation name="runFetchData">
+      <soap:operation soapAction="http://soap.g-language.org/KBWS#runFetchData" />
+      <input name="runFetchDataRequest">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </input>
+      <output name="runFetchDataResponse">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </output>
+    </operation>
+
+    <operation name="runFetchBatch">
+      <soap:operation soapAction="http://soap.g-language.org/KBWS#runFetchBatch" />
+      <input name="runFetchBatchRequest">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </input>
+      <output name="runFetchBatchResponse">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </output>
+    </operation>
+
+    <operation name="runGenemarkhmm">
+      <soap:operation soapAction="http://soap.g-language.org/KBWS#runGenemarkhmm" />
+      <input name="runGenemarkhmmRequest">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </input>
+      <output name="runGenemarkhmmResponse">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </output>
+    </operation>
+
+    <operation name="runGlimmer">
+      <soap:operation soapAction="http://soap.g-language.org/KBWS#runGlimmer" />
+      <input name="runGlimmerRequest">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </input>
+      <output name="runGlimmerResponse">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </output>
+    </operation>
+
+    <operation name="runKalign">
+      <soap:operation soapAction="http://soap.g-language.org/KBWS#runKalign" />
+      <input name="runKalignRequest">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </input>
+      <output name="runKalignResponse">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </output>
+    </operation>
+
+    <operation name="runMafft">
+      <soap:operation soapAction="http://soap.g-language.org/KBWS#runMafft" />
+      <input name="runMafftRequest">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </input>
+      <output name="runMafftResponse">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </output>
+    </operation>
+
+    <operation name="runMuscle">
+      <soap:operation soapAction="http://soap.g-language.org/KBWS#runMuscle" />
+      <input name="runMuscleRequest">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </input>
+      <output name="runMuscleResponse">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </output>
+    </operation>
+
+    <operation name="runPhobius">
+      <soap:operation soapAction="http://soap.g-language.org/KBWS#runPhobius" />
+      <input name="runPhobiusRequest">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </input>
+      <output name="runPhobiusResponse">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </output>
+    </operation>
+
+    <operation name="runProtpars">
+      <soap:operation soapAction="http://soap.g-language.org/KBWS#runProtpars" />
+      <input name="runProtparsRequest">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </input>
+      <output name="runProtparsResponse">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </output>
+    </operation>
+
+    <operation name="runProtdist">
+      <soap:operation soapAction="http://soap.g-language.org/KBWS#runProtdist" />
+      <input name="runProtdistRequest">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </input>
+      <output name="runProtdistResponse">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </output>
+    </operation>
+
+    <operation name="runDnapars">
+      <soap:operation soapAction="http://soap.g-language.org/KBWS#runDnapars" />
+      <input name="runDnaparsRequest">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </input>
+      <output name="runDnaparsResponse">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </output>
+    </operation>
+
+    <operation name="runDnapenny">
+      <soap:operation soapAction="http://soap.g-language.org/KBWS#runDnapenny" />
+      <input name="runDnapennyRequest">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </input>
+      <output name="runDnapennyResponse">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </output>
+    </operation>
+
+    <operation name="runDnacomp">
+      <soap:operation soapAction="http://soap.g-language.org/KBWS#runDnacomp" />
+      <input name="runDnacompRequest">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </input>
+      <output name="runDnacompResponse">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </output>
+    </operation>
+
+    <operation name="runDnainvar">
+      <soap:operation soapAction="http://soap.g-language.org/KBWS#runDnainvar" />
+      <input name="runDnainvarRequest">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </input>
+      <output name="runDnainvarResponse">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </output>
+    </operation>
+
+    <operation name="runDnaml">
+      <soap:operation soapAction="http://soap.g-language.org/KBWS#runDnaml" />
+      <input name="runDnamlRequest">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </input>
+      <output name="runDnamlResponse">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </output>
+    </operation>
+
+    <operation name="runDnamlk">
+      <soap:operation soapAction="http://soap.g-language.org/KBWS#runDnamlk" />
+      <input name="runDnamlkRequest">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </input>
+      <output name="runDnamlkResponse">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </output>
+    </operation>
+
+    <operation name="runDnadist">
+      <soap:operation soapAction="http://soap.g-language.org/KBWS#runDnadist" />
+      <input name="runDnadistRequest">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </input>
+      <output name="runDnadistResponse">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </output>
+    </operation>
+
+    <operation name="runGendist">
+      <soap:operation soapAction="http://soap.g-language.org/KBWS#runGendist" />
+      <input name="runGendistRequest">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </input>
+      <output name="runGendistResponse">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </output>
+    </operation>
+
+    <operation name="runSeqboot">
+      <soap:operation soapAction="http://soap.g-language.org/KBWS#runSeqboot" />
+      <input name="runSeqbootRequest">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </input>
+      <output name="runSeqbootResponse">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </output>
+    </operation>
+
+    <operation name="runRestml">
+      <soap:operation soapAction="http://soap.g-language.org/KBWS#runRestml" />
+      <input name="runRestmlRequest">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </input>
+      <output name="runRestmlResponse">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </output>
+    </operation>
+
+    <operation name="runClique">
+      <soap:operation soapAction="http://soap.g-language.org/KBWS#runClique" />
+      <input name="runCliqueRequest">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </input>
+      <output name="runCliqueResponse">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </output>
+    </operation>
+
+    <operation name="runFitch">
+      <soap:operation soapAction="http://soap.g-language.org/KBWS#runFitch" />
+      <input name="runFitchRequest">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </input>
+      <output name="runFitchResponse">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </output>
+    </operation>
+
+    <operation name="runKitsch">
+      <soap:operation soapAction="http://soap.g-language.org/KBWS#runKitsch" />
+      <input name="runKitschRequest">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </input>
+      <output name="runKitschResponse">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </output>
+    </operation>
+
+    <operation name="runNeighbor">
+      <soap:operation soapAction="http://soap.g-language.org/KBWS#runNeighbor" />
+      <input name="runNeighborRequest">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </input>
+      <output name="runNeighborResponse">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </output>
+    </operation>
+
+    <operation name="runContml">
+      <soap:operation soapAction="http://soap.g-language.org/KBWS#runContml" />
+      <input name="runContmlRequest">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </input>
+      <output name="runContmlResponse">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </output>
+    </operation>
+
+    <operation name="runMix">
+      <soap:operation soapAction="http://soap.g-language.org/KBWS#runMix" />
+      <input name="runMixRequest">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </input>
+      <output name="runMixResponse">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </output>
+    </operation>
+
+    <operation name="runPenny">
+      <soap:operation soapAction="http://soap.g-language.org/KBWS#runPenny" />
+      <input name="runPennyRequest">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </input>
+      <output name="runPennyResponse">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </output>
+    </operation>
+
+    <operation name="runDollop">
+      <soap:operation soapAction="http://soap.g-language.org/KBWS#runDollop" />
+      <input name="runDollopRequest">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </input>
+      <output name="runDollopResponse">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </output>
+    </operation>
+
+    <operation name="runDolpenny">
+      <soap:operation soapAction="http://soap.g-language.org/KBWS#runDolpenny" />
+      <input name="runDolpennyRequest">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </input>
+      <output name="runDolpennyResponse">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </output>
+    </operation>
+
+    <operation name="runPsort">
+      <soap:operation soapAction="http://soap.g-language.org/KBWS#runPsort" />
+      <input name="runPsortRequest">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </input>
+      <output name="runPsortResponse">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </output>
+    </operation>
+
+    <operation name="runPsort2">
+      <soap:operation soapAction="http://soap.g-language.org/KBWS#runPsort2" />
+      <input name="runPsort2Request">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </input>
+      <output name="runPsort2Response">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </output>
+    </operation>
+
+    <operation name="runPsortb">
+      <soap:operation soapAction="http://soap.g-language.org/KBWS#runPsortb" />
+      <input name="runPsortbRequest">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </input>
+      <output name="runPsortbResponse">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </output>
+    </operation>
+
+    <operation name="runSsearch">
+      <soap:operation soapAction="http://soap.g-language.org/KBWS#runSsearch" />
+      <input name="runSsearchRequest">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </input>
+      <output name="runSsearchResponse">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </output>
+    </operation>
+
+    <operation name="runTcoffee">
+      <soap:operation soapAction="http://soap.g-language.org/KBWS#runTcoffee" />
+      <input name="runTcoffeeRequest">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </input>
+      <output name="runTcoffeeResponse">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </output>
+    </operation>
+
+    <operation name="runtRNAscan">
+      <soap:operation soapAction="http://soap.g-language.org/KBWS#runtRNAscan" />
+      <input name="runtRNAscanRequest">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </input>
+      <output name="runtRNAscanResponse">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </output>
+    </operation>
+
+    <operation name="runWeblogo">
+      <soap:operation soapAction="http://soap.g-language.org/KBWS#runWeblogo" />
+      <input name="runWeblogoRequest">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </input>
+      <output name="runWeblogoResponse">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </output>
+    </operation>
+
+    <operation name="runWolfPsort">
+      <soap:operation soapAction="http://soap.g-language.org/KBWS#runWolfPsort" />
+      <input name="runWolfPsortRequest">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </input>
+      <output name="runWolfPsortResponse">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </output>
+    </operation>
+
+    <operation name="runRNAfold">
+      <soap:operation soapAction="http://soap.g-language.org/KBWS#runRNAfold" />
+      <input name="runRNAfoldRequest">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </input>
+      <output name="runRNAfoldResponse">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </output>
+    </operation>
+
+    <operation name="showBlastDB">
+      <soap:operation soapAction="http://soap.g-language.org/KBWS#showBlastDB" />
+      <input name="showBlastDBRequest">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </input>
+      <output name="showBlastDBResponse">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </output>
+    </operation>
+
+    <operation name="map2PathwayProjector">
+      <soap:operation soapAction="http://soap.g-language.org/KBWS#map2PathwayProjector" />
+      <input name="map2PathwayProjectorRequest">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </input>
+      <output name="map2PathwayProjectorResponse">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </output>
+    </operation>
+
+    <operation name="checkStatus">
+      <soap:operation soapAction="http://soap.g-language.org/KBWS#checkStatus" />
+      <input name="checkStatusRequest">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </input>
+      <output name="checkStatusResponse">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </output>
+    </operation>
+
+    <operation name="checkStatus_retJobid">
+      <soap:operation soapAction="http://soap.g-language.org/KBWS#checkStatus_retJobid" />
+      <input name="checkStatus_retJobidRequest">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </input>
+      <output name="checkStatus_retJobidResponse">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </output>
+    </operation>
+
+    <operation name="getResult">
+      <soap:operation soapAction="http://soap.g-language.org/KBWS#getResult" />
+      <input name="getResultRequest">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </input>
+      <output name="getResultResponse">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </output>
+    </operation>
+
+    <operation name="getMultiResult">
+      <soap:operation soapAction="http://soap.g-language.org/KBWS#getMultiResult" />
+      <input name="getMultiResultRequest">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </input>
+      <output name="getMultiResultResponse">
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   use="encoded" namespace="http://soap.g-language.org/KBWS" />
+      </output>
+    </operation>
+  </binding>
+
+  <service name="KBWSService">
+    <port name="KBWS" binding="tns:KBWSSoapBinding">
+      <soap:address location="http://soap.g-language.org/kbws/kbws.cgi" />
+    </port>
+  </service>
+
+</definitions>
+

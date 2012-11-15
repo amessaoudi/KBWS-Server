@@ -1,0 +1,1733 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions
+   name="KBWS"
+   targetNamespace="http://soap.g-language.org/KBWS"
+   xmlns:tns="http://soap.g-language.org/KBWS"
+   xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+   xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+   xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/"
+   >
+
+  <wsdl:types>
+    <xsd:schema
+	attributeFormDefault="unquailfied"
+	elementFormDefault="unqualified"
+	targetNamespace="http://soap.g-language.org/KBWS"
+	>
+
+      <xsd:complexType name="blastInputParams">
+	<xsd:sequence>
+	  <xsd:element maxOccurs="1" minOccurs="0" name="p"      nillable="true" type="xsd:string" />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="d"      nillable="true" type="xsd:string" />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="server" nillable="true" type="xsd:string" />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="e"      nillable="true" type="xsd:string" />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="m"      nillable="true" type="xsd:string" />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="F"      nillable="true" type="xsd:string" />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="G"      nillable="true" type="xsd:int"    />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="E"      nillable="true" type="xsd:int"    />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="X"      nillable="true" type="xsd:string" />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="q"      nillable="true" type="xsd:int"    />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="r"      nillable="true" type="xsd:int"    />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="v"      nillable="true" type="xsd:int"    />
+ 	  <xsd:element maxOccurs="1" minOccurs="0" name="b"      nillable="true" type="xsd:int"    />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="f"      nillable="true" type="xsd:int"    />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="g"      nillable="true" type="xsd:boolean" />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="M"      nillable="true" type="xsd:string"  />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="W"      nillable="true" type="xsd:int"     />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="z"      nillable="true" type="xsd:float"   />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="K"      nillable="true" type="xsd:int"     />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="Y"      nillable="true" type="xsd:float"   />
+	</xsd:sequence>
+      </xsd:complexType>
+
+      <xsd:complexType name="centroidfoldInputParams">
+	<xsd:sequence>
+	  <xsd:element maxOccurs="1" minOccurs="0" name="model" nillable="true" type="xsd:string" />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="gamma" nillable="true" type="xsd:int"    />
+	</xsd:sequence>
+      </xsd:complexType>
+
+      <xsd:complexType name="clustalwInputParams">
+	<xsd:sequence>
+	  <xsd:element maxOccurs="1" minOccurs="0" name="alignment"   nillable="true" type="xsd:string"  />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="ktup"        nillable="true" type="xsd:int"     />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="window"      nillable="true" type="xsd:int"     />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="score"       nillable="true" type="xsd:string"  />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="topdiags"    nillable="true" type="xsd:int"     />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="pairgap"     nillable="true" type="xsd:int"     />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="pwmatrix"    nillable="true" type="xsd:string"  />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="dnapwmatrix" nillable="true" type="xsd:string"  />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="pwgapopen"   nillable="true" type="xsd:int"     />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="pwgapext"    nillable="true" type="xsd:float"   />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="matrix"      nillable="true" type="xsd:string"  />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="dnamatrix"   nillable="true" type="xsd:string"  />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="gapopen"     nillable="true" type="xsd:int"     />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="endgaps"     nillable="true" type="xsd:boolean" />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="gapext"      nillable="true" type="xsd:float"   />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="gapdist"     nillable="true" type="xsd:int"     />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="iteration"   nillable="true" type="xsd:string"  />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="numiter"     nillable="true" type="xsd:int"     />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="clustering"  nillable="true" type="xsd:string"  />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="output"      nillable="true" type="xsd:string"  />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="outorder"    nillable="true" type="xsd:string"  />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="quicktree"   nillable="true" type="xsd:boolean" />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="align"       nillable="true" type="xsd:boolean" />
+	</xsd:sequence>
+      </xsd:complexType>
+
+      <xsd:complexType name="fetchDataInputParams">
+	<xsd:sequence>
+	  <xsd:element maxOccurs="1" minOccurs="0" name="format" nillable="true" type="xsd:string" />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="style"  nillable="true" type="xsd:string" />
+	</xsd:sequence>
+      </xsd:complexType>
+
+      <xsd:complexType name="fetchBatchInputParams">
+	<xsd:sequence>
+	  <xsd:element maxOccurs="1" minOccurs="0" name="format" nillable="true" type="xsd:string" />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="style"  nillable="true" type="xsd:string" />
+	</xsd:sequence>
+      </xsd:complexType>
+
+      <xsd:complexType name="genemarkhmmInputParams">
+	<xsd:sequence>
+	  <xsd:element maxOccurs="1" minOccurs="0" name="title" nillable="true" type="xsd:string"  />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="rbs"   nillable="true" type="xsd:boolean" />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="list"  nillable="true" type="xsd:boolean" />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="org"   nillable="true" type="xsd:string"  />
+	</xsd:sequence>
+      </xsd:complexType>
+
+      <xsd:complexType name="glimmerInputParams">
+	<xsd:sequence>
+	  <xsd:element maxOccurs="1" minOccurs="0" name="gencode"  nillable="true" type="xsd:int"    />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="topology" nillable="true" type="xsd:string" />
+	</xsd:sequence>
+      </xsd:complexType>
+
+      <xsd:complexType name="kalignInputParams">
+	<xsd:sequence>
+	  <xsd:element maxOccurs="1" minOccurs="0" name="moltype" nillable="true" type="xsd:string" />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="gpo"     nillable="true" type="xsd:float"  />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="gpe"     nillable="true" type="xsd:float"  />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="tgpe"    nillable="true" type="xsd:float"  />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="bonus"   nillable="true" type="xsd:float"  />
+	</xsd:sequence>
+      </xsd:complexType>
+
+      <xsd:complexType name="mafftInputParams">
+	<xsd:sequence>
+	  <xsd:element maxOccurs="1" minOccurs="0" name="strategy"     nillable="true" type="xsd:string"  />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="outorder"     nillable="true" type="xsd:string"  />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="op"           nillable="true" type="xsd:float"   />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="ep"           nillable="true" type="xsd:float"   />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="scorematrix"  nillable="true" type="xsd:string"  />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="homologs"     nillable="true" type="xsd:boolean" />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="showhomologs" nillable="true" type="xsd:boolean" />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="numhomologs"  nillable="true" type="xsd:int"     />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="threshold"    nillable="true" type="xsd:float"   />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="referenceseq" nillable="true" type="xsd:string"  />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="harrplot"     nillable="true" type="xsd:string"  />
+	</xsd:sequence>
+      </xsd:complexType>
+
+      <xsd:complexType name="muscleInputParams">
+	<xsd:sequence>
+	  <xsd:element maxOccurs="1" minOccurs="0" name="output"    nillable="true" type="xsd:string" />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="outorder"  nillable="true" type="xsd:string" />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="gapopen"   nillable="true" type="xsd:float"  />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="gapextend" nillable="true" type="xsd:float"  />
+	</xsd:sequence>
+      </xsd:complexType>
+
+      <xsd:complexType name="phobiusInputParams">
+	<xsd:sequence>
+	  <xsd:element maxOccurs="1" minOccurs="0" name="outputformat" nillable="true" type="xsd:string" />
+	</xsd:sequence>
+      </xsd:complexType>
+
+      <xsd:complexType name="psortInputParams">
+	<xsd:sequence>
+	  <xsd:element maxOccurs="1" minOccurs="0" name="org"   nillable="true" type="xsd:string" />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="title" nillable="true" type="xsd:string" />
+	</xsd:sequence>
+      </xsd:complexType>
+
+      <xsd:complexType name="psortbInputParams">
+	<xsd:sequence>
+	  <xsd:element maxOccurs="1" minOccurs="0" name="format" nillable="true" type="xsd:string" />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="gram"   nillable="true" type="xsd:string" />
+	</xsd:sequence>
+      </xsd:complexType>
+
+      <xsd:complexType name="tcoffeeInputParams">
+	<xsd:sequence>
+	  <xsd:element maxOccurs="1" minOccurs="0" name="matrix"   nillable="true" type="xsd:string" />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="outorder" nillable="true" type="xsd:string" />
+	</xsd:sequence>
+      </xsd:complexType>
+
+      <xsd:complexType name="tRNAscanInputParams">
+	<xsd:sequence>
+	  <xsd:element maxOccurs="1" minOccurs="0" name="title"      nillable="true" type="xsd:string"  />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="mode"       nillable="true" type="xsd:string"  />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="source"     nillable="true" type="xsd:string"  />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="gcode"      nillable="true" type="xsd:string"  />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="pesudogene" nillable="true" type="xsd:boolean" />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="origin"     nillable="true" type="xsd:boolean" />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="ace"        nillable="true" type="xsd:boolean" />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="codons"     nillable="true" type="xsd:boolean" />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="fpos"       nillable="true" type="xsd:boolean" />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="breakdown"  nillable="true" type="xsd:boolean" />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="covescore"  nillable="true" type="xsd:string"  />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="euparams"   nillable="true" type="xsd:string"  />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="euscore"    nillable="true" type="xsd:string"  />
+	</xsd:sequence>
+      </xsd:complexType>
+
+      <xsd:complexType name="ssearchInputParams">
+	<xsd:sequence>
+	  <xsd:element maxOccurs="1" minOccurs="0" name="d"            nillable="true" type="xsd:string"  />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="moltype"      nillable="true" type="xsd:string"  />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="histogram"    nillable="true" type="xsd:boolean" />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="nucleotide"   nillable="true" type="xsd:boolean" />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="topstrand"    nillable="true" type="xsd:boolean" />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="bottomstrand" nillable="true" type="xsd:boolean" />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="gapopen"      nillable="true" type="xsd:int"     />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="gapext"       nillable="true" type="xsd:int"     />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="scores"       nillable="true" type="xsd:int"     />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="alignments"   nillable="true" type="xsd:int"     />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="ktup"         nillable="true" type="xsd:int"     />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="matrix"       nillable="true" type="xsd:string"  />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="eupper"       nillable="true" type="xsd:float"   />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="elower"       nillable="true" type="xsd:float"   />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="dbrange"      nillable="true" type="xsd:string"  />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="seqrange"     nillable="true" type="xsd:string"  />
+	</xsd:sequence>
+      </xsd:complexType>
+
+      <xsd:complexType name="weblogoInputParams">
+	<xsd:sequence>
+	  <xsd:element maxOccurs="1" minOccurs="0" name="format" nillable="true" type="xsd:string" />
+	</xsd:sequence>
+      </xsd:complexType>
+
+      <xsd:complexType name="wolfPsortInputParams">
+	<xsd:sequence>
+	  <xsd:element maxOccurs="1" minOccurs="0" name="org" nillable="true" type="xsd:string" />
+	</xsd:sequence>
+      </xsd:complexType>
+
+      <xsd:complexType name="RNAfoldInputParams">
+	<xsd:sequence>
+	  <xsd:element maxOccurs="1" minOccurs="0" name="method"    nillable="true" type="xsd:string"  />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="noclosegu" nillable="true" type="xsd:boolean" />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="nolp"      nillable="true" type="xsd:boolean" />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="dangling"  nillable="true" type="xsd:string"  />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="param"     nillable="true" type="xsd:string"  />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="tmp"       nillable="true" type="xsd:int"     />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="circ"      nillable="true" type="xsd:boolean" />
+	</xsd:sequence>
+      </xsd:complexType>
+
+      <xsd:complexType name="showBlastDBInputParams">
+	<xsd:sequence>
+	  <xsd:element maxOccurs="1" minOccurs="0" name="nucleotide" nillable="true" type="xsd:boolean" />
+	  <xsd:element maxOccurs="1" minOccurs="0" name="protein"    nillable="true" type="xsd:boolean" />
+	</xsd:sequence>
+      </xsd:complexType>
+
+      <xsd:element name="runBlast">
+	<xsd:complexType>
+	  <xsd:sequence>
+	    <xsd:element maxOccurs="1" minOccurs="0" name="in0" nillable="false" type="xsd:string" />
+	    <xsd:element maxOccurs="1" minOccurs="0" name="params" nillable="true" type="tns:blastInputParams" />
+	  </xsd:sequence>
+	</xsd:complexType>
+      </xsd:element>
+ 
+      <xsd:element name="runCentroidfold">
+	<xsd:complexType>
+	  <xsd:sequence>
+	    <xsd:element maxOccurs="1" minOccurs="0" name="in0" nillable="false" type="xsd:string" />
+	    <xsd:element maxOccurs="1" minOccurs="0" name="params" nillable="true" type="tns:centroidfoldInputParams" />
+	  </xsd:sequence>
+	</xsd:complexType>
+      </xsd:element>
+
+      <xsd:element name="runClustalw">
+	<xsd:complexType>
+	  <xsd:sequence>
+	    <xsd:element maxOccurs="1" minOccurs="0" name="in0" nillable="false" type="xsd:string" />
+	    <xsd:element maxOccurs="1" minOccurs="0" name="params" nillable="true" type="tns:clustalwInputParams" />
+	  </xsd:sequence>
+	</xsd:complexType>
+      </xsd:element>
+
+      <xsd:element name="runFetchData">
+	<xsd:complexType>
+	  <xsd:sequence>
+	    <xsd:element maxOccurs="1" minOccurs="0" name="in0" nillable="false" type="xsd:string" />
+	    <xsd:element maxOccurs="1" minOccurs="0" name="params" nillable="true" type="tns:fetchDataInputParams" />
+	  </xsd:sequence>
+	</xsd:complexType>
+      </xsd:element>
+
+      <xsd:element name="runFetchBatch">
+	<xsd:complexType>
+	  <xsd:sequence>
+	    <xsd:element maxOccurs="1" minOccurs="0" name="in0" nillable="false" type="xsd:string" />
+	    <xsd:element maxOccurs="1" minOccurs="0" name="params" nillable="true" type="tns:fetchBatchInputParams" />
+	  </xsd:sequence>
+	</xsd:complexType>
+      </xsd:element>
+
+      <xsd:element name="runGenemarkhmm">
+	<xsd:complexType>
+	  <xsd:sequence>
+	    <xsd:element maxOccurs="1" minOccurs="0" name="in0" nillable="false" type="xsd:string" />
+	    <xsd:element maxOccurs="1" minOccurs="0" name="params" nillable="true" type="tns:genemarkhmmInputParams" />
+	  </xsd:sequence>
+	</xsd:complexType>
+      </xsd:element>
+
+      <xsd:element name="runGlimmer">
+	<xsd:complexType>
+	  <xsd:sequence>
+	    <xsd:element maxOccurs="1" minOccurs="0" name="in0" nillable="false" type="xsd:string" />
+	    <xsd:element maxOccurs="1" minOccurs="0" name="params" nillable="true" type="tns:glimmerInputParams" />
+	  </xsd:sequence>
+	</xsd:complexType>
+      </xsd:element>
+
+      <xsd:element name="runKalign">
+	<xsd:complexType>
+	  <xsd:sequence>
+	    <xsd:element maxOccurs="1" minOccurs="0" name="in0" nillable="false" type="xsd:string" />
+	    <xsd:element maxOccurs="1" minOccurs="0" name="params" nillable="true" type="tns:kalignInputParams" />
+	  </xsd:sequence>
+	</xsd:complexType>
+      </xsd:element>
+
+      <xsd:element name="runMafft">
+	<xsd:complexType>
+	  <xsd:sequence>
+	    <xsd:element maxOccurs="1" minOccurs="0" name="in0" nillable="false" type="xsd:string" />
+	    <xsd:element maxOccurs="1" minOccurs="0" name="params" nillable="true" type="tns:mafftInputParams" />
+	  </xsd:sequence>
+	</xsd:complexType>
+      </xsd:element>
+
+      <xsd:element name="runMuscle">
+	<xsd:complexType>
+	  <xsd:sequence>
+	    <xsd:element maxOccurs="1" minOccurs="0" name="in0" nillable="false" type="xsd:string" />
+	    <xsd:element maxOccurs="1" minOccurs="0" name="params" nillable="true" type="tns:muscleInputParams" />
+	  </xsd:sequence>
+	</xsd:complexType>
+      </xsd:element>
+
+      <xsd:element name="runPhobius">
+	<xsd:complexType>
+	  <xsd:sequence>
+	    <xsd:element maxOccurs="1" minOccurs="0" name="in0" nillable="false" type="xsd:string" />
+	    <xsd:element maxOccurs="1" minOccurs="0" name="params" nillable="true" type="tns:phobiusInputParams" />
+	  </xsd:sequence>
+	</xsd:complexType>
+      </xsd:element>
+
+      <xsd:element name="runProtpars">
+	<xsd:complexType>
+	  <xsd:sequence>
+	    <xsd:element maxOccurs="1" minOccurs="0" name="in0" nillable="false" type="xsd:string" />
+	  </xsd:sequence>
+	</xsd:complexType>
+      </xsd:element>
+
+      <xsd:element name="runProtdist">
+	<xsd:complexType>
+	  <xsd:sequence>
+	    <xsd:element maxOccurs="1" minOccurs="0" name="in0" nillable="false" type="xsd:string" />
+	  </xsd:sequence>
+	</xsd:complexType>
+      </xsd:element>
+
+      <xsd:element name="runDnapars">
+	<xsd:complexType>
+	  <xsd:sequence>
+	    <xsd:element maxOccurs="1" minOccurs="0" name="in0" nillable="false" type="xsd:string" />
+	  </xsd:sequence>
+	</xsd:complexType>
+      </xsd:element>
+
+      <xsd:element name="runDnapenny">
+	<xsd:complexType>
+	  <xsd:sequence>
+	    <xsd:element maxOccurs="1" minOccurs="0" name="in0" nillable="false" type="xsd:string" />
+	  </xsd:sequence>
+	</xsd:complexType>
+      </xsd:element>
+
+      <xsd:element name="runDnacomp">
+	<xsd:complexType>
+	  <xsd:sequence>
+	    <xsd:element maxOccurs="1" minOccurs="0" name="in0" nillable="false" type="xsd:string" />
+	  </xsd:sequence>
+	</xsd:complexType>
+      </xsd:element>
+
+      <xsd:element name="runDnainvar">
+	<xsd:complexType>
+	  <xsd:sequence>
+	    <xsd:element maxOccurs="1" minOccurs="0" name="in0" nillable="false" type="xsd:string" />
+	  </xsd:sequence>
+	</xsd:complexType>
+      </xsd:element>
+
+      <xsd:element name="runDnaml">
+	<xsd:complexType>
+	  <xsd:sequence>
+	    <xsd:element maxOccurs="1" minOccurs="0" name="in0" nillable="false" type="xsd:string" />
+	  </xsd:sequence>
+	</xsd:complexType>
+      </xsd:element>
+
+      <xsd:element name="runDnamlk">
+	<xsd:complexType>
+	  <xsd:sequence>
+	    <xsd:element maxOccurs="1" minOccurs="0" name="in0" nillable="false" type="xsd:string" />
+	  </xsd:sequence>
+	</xsd:complexType>
+      </xsd:element>
+
+      <xsd:element name="runDnadist">
+	<xsd:complexType>
+	  <xsd:sequence>
+	    <xsd:element maxOccurs="1" minOccurs="0" name="in0" nillable="false" type="xsd:string" />
+	  </xsd:sequence>
+	</xsd:complexType>
+      </xsd:element>
+
+      <xsd:element name="runGendist">
+	<xsd:complexType>
+	  <xsd:sequence>
+	    <xsd:element maxOccurs="1" minOccurs="0" name="in0" nillable="false" type="xsd:string" />
+	  </xsd:sequence>
+	</xsd:complexType>
+      </xsd:element>
+
+      <xsd:element name="runSeqboot">
+	<xsd:complexType>
+	  <xsd:sequence>
+	    <xsd:element maxOccurs="1" minOccurs="0" name="in0" nillable="false" type="xsd:string" />
+	  </xsd:sequence>
+	</xsd:complexType>
+      </xsd:element>
+
+      <xsd:element name="runRestml">
+	<xsd:complexType>
+	  <xsd:sequence>
+	    <xsd:element maxOccurs="1" minOccurs="0" name="in0" nillable="false" type="xsd:string" />
+	  </xsd:sequence>
+	</xsd:complexType>
+      </xsd:element>
+
+      <xsd:element name="runClique">
+	<xsd:complexType>
+	  <xsd:sequence>
+	    <xsd:element maxOccurs="1" minOccurs="0" name="in0" nillable="false" type="xsd:string" />
+	  </xsd:sequence>
+	</xsd:complexType>
+      </xsd:element>
+
+      <xsd:element name="runFitch">
+	<xsd:complexType>
+	  <xsd:sequence>
+	    <xsd:element maxOccurs="1" minOccurs="0" name="in0" nillable="false" type="xsd:string" />
+	  </xsd:sequence>
+	</xsd:complexType>
+      </xsd:element>
+
+      <xsd:element name="runKitsch">
+	<xsd:complexType>
+	  <xsd:sequence>
+	    <xsd:element maxOccurs="1" minOccurs="0" name="in0" nillable="false" type="xsd:string" />
+	  </xsd:sequence>
+	</xsd:complexType>
+      </xsd:element>
+
+      <xsd:element name="runNeighbor">
+	<xsd:complexType>
+	  <xsd:sequence>
+	    <xsd:element maxOccurs="1" minOccurs="0" name="in0" nillable="false" type="xsd:string" />
+	  </xsd:sequence>
+	</xsd:complexType>
+      </xsd:element>
+
+      <xsd:element name="runContml">
+	<xsd:complexType>
+	  <xsd:sequence>
+	    <xsd:element maxOccurs="1" minOccurs="0" name="in0" nillable="false" type="xsd:string" />
+	  </xsd:sequence>
+	</xsd:complexType>
+      </xsd:element>
+
+      <xsd:element name="runMix">
+	<xsd:complexType>
+	  <xsd:sequence>
+	    <xsd:element maxOccurs="1" minOccurs="0" name="in0" nillable="false" type="xsd:string" />
+	  </xsd:sequence>
+	</xsd:complexType>
+      </xsd:element>
+
+      <xsd:element name="runPenny">
+	<xsd:complexType>
+	  <xsd:sequence>
+	    <xsd:element maxOccurs="1" minOccurs="0" name="in0" nillable="false" type="xsd:string" />
+	  </xsd:sequence>
+	</xsd:complexType>
+      </xsd:element>
+
+      <xsd:element name="runDollop">
+	<xsd:complexType>
+	  <xsd:sequence>
+	    <xsd:element maxOccurs="1" minOccurs="0" name="in0" nillable="false" type="xsd:string" />
+	  </xsd:sequence>
+	</xsd:complexType>
+      </xsd:element>
+
+      <xsd:element name="runDolpenny">
+	<xsd:complexType>
+	  <xsd:sequence>
+	    <xsd:element maxOccurs="1" minOccurs="0" name="in0" nillable="false" type="xsd:string" />
+	  </xsd:sequence>
+	</xsd:complexType>
+      </xsd:element>
+
+      <xsd:element name="runPsort">
+	<xsd:complexType>
+	  <xsd:sequence>
+	    <xsd:element maxOccurs="1" minOccurs="0" name="in0" nillable="false" type="xsd:string" />
+	    <xsd:element maxOccurs="1" minOccurs="0" name="params" nillable="true" type="tns:psortInputParams" />
+	  </xsd:sequence>
+	</xsd:complexType>
+      </xsd:element>
+
+      <xsd:element name="runPsort2">
+	<xsd:complexType>
+	  <xsd:sequence>
+	    <xsd:element maxOccurs="1" minOccurs="0" name="in0" nillable="false" type="xsd:string" />
+	  </xsd:sequence>
+	</xsd:complexType>
+      </xsd:element>
+
+      <xsd:element name="runPsortb">
+	<xsd:complexType>
+	  <xsd:sequence>
+	    <xsd:element maxOccurs="1" minOccurs="0" name="in0" nillable="false" type="xsd:string" />
+	    <xsd:element maxOccurs="1" minOccurs="0" name="params" nillable="true" type="tns:psortbInputParams" />
+	  </xsd:sequence>
+	</xsd:complexType>
+      </xsd:element>
+
+      <xsd:element name="runSsearch">
+	<xsd:complexType>
+	  <xsd:sequence>
+	    <xsd:element maxOccurs="1" minOccurs="0" name="in0" nillable="false" type="xsd:string" />
+	    <xsd:element maxOccurs="1" minOccurs="0" name="params" nillable="true" type="tns:ssearchInputParams" />
+	  </xsd:sequence>
+	</xsd:complexType>
+      </xsd:element>
+
+      <xsd:element name="runTcoffee">
+	<xsd:complexType>
+	  <xsd:sequence>
+	    <xsd:element maxOccurs="1" minOccurs="0" name="in0" nillable="false" type="xsd:string" />
+	    <xsd:element maxOccurs="1" minOccurs="0" name="params" nillable="true" type="tns:tcoffeeInputParams" />
+	  </xsd:sequence>
+	</xsd:complexType>
+      </xsd:element>
+
+      <xsd:element name="runtRNAscan">
+	<xsd:complexType>
+	  <xsd:sequence>
+	    <xsd:element maxOccurs="1" minOccurs="0" name="in0" nillable="false" type="xsd:string" />
+	    <xsd:element maxOccurs="1" minOccurs="0" name="params" nillable="true" type="tns:tRNAscanInputParams" />
+	  </xsd:sequence>
+	</xsd:complexType>
+      </xsd:element>
+
+      <xsd:element name="runWeblogo">
+	<xsd:complexType>
+	  <xsd:sequence>
+	    <xsd:element maxOccurs="1" minOccurs="0" name="in0" nillable="false" type="xsd:string" />
+	    <xsd:element maxOccurs="1" minOccurs="0" name="params" nillable="true" type="tns:weblogoInputParams" />
+	  </xsd:sequence>
+	</xsd:complexType>
+      </xsd:element>
+
+      <xsd:element name="runWolfPsort">
+	<xsd:complexType>
+	  <xsd:sequence>
+	    <xsd:element maxOccurs="1" minOccurs="0" name="in0" nillable="false" type="xsd:string" />
+	    <xsd:element maxOccurs="1" minOccurs="0" name="params" nillable="true" type="tns:wolfPsortInputParams" />
+	  </xsd:sequence>
+	</xsd:complexType>
+      </xsd:element>
+
+      <xsd:element name="runRNAfold">
+	<xsd:complexType>
+	  <xsd:sequence>
+	    <xsd:element maxOccurs="1" minOccurs="0" name="in0" nillable="false" type="xsd:string" />
+	    <xsd:element maxOccurs="1" minOccurs="0" name="params" nillable="true" type="tns:RNAfoldInputParams" />
+	  </xsd:sequence>
+	</xsd:complexType>
+      </xsd:element>
+
+      <xsd:element name="showBlastDB">
+	<xsd:complexType>
+	  <xsd:sequence>
+	    <xsd:element maxOccurs="1" minOccurs="0" name="params" nillable="true" type="tns:showBlastDBInputParams" />
+	  </xsd:sequence>
+	</xsd:complexType>
+      </xsd:element>
+
+      <xsd:element name="map2PathwayProjector">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="in0" nillable="false" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+
+      <xsd:element name="jobID">
+	<xsd:complexType>
+	  <xsd:sequence>
+	    <xsd:element maxOccurs="1" minOccurs="1" name="jobid" nillable="false" type="xsd:string" />
+	  </xsd:sequence>
+	</xsd:complexType>
+      </xsd:element>
+
+      <xsd:element name="checkStatus">
+	<xsd:complexType>
+	  <xsd:sequence>
+	    <xsd:element maxOccurs="1" minOccurs="1" name="jobid" nillable="false" type="xsd:string" />
+	  </xsd:sequence>
+	</xsd:complexType>
+      </xsd:element>
+
+      <xsd:element name="checkStatus_retJobid">
+	<xsd:complexType>
+	  <xsd:sequence>
+	    <xsd:element maxOccurs="1" minOccurs="1" name="jobid" nillable="false" type="xsd:string" />
+	  </xsd:sequence>
+	</xsd:complexType>
+      </xsd:element>
+
+      <xsd:element name="getResult">
+	<xsd:complexType>
+	  <xsd:sequence>
+	    <xsd:element maxOccurs="1" minOccurs="1" name="jobid" nillable="false" type="xsd:string" />
+	  </xsd:sequence>
+	</xsd:complexType>
+      </xsd:element>
+
+      <xsd:element name="getMultiResult">
+	<xsd:complexType>
+	  <xsd:sequence>
+	    <xsd:element maxOccurs="1" minOccurs="1" name="jobid" nillable="false" type="xsd:string" />
+	    <xsd:element maxOccurs="1" minOccurs="1" name="type"  nillable="false" type="xsd:string" />
+	  </xsd:sequence>
+	</xsd:complexType>
+      </xsd:element>
+
+      <xsd:element name="result">
+	<xsd:complexType>
+	  <xsd:sequence>
+	    <xsd:element maxOccurs="1" minOccurs="1" name="jobid" nillable="false" type="xsd:string" />
+	  </xsd:sequence>
+	</xsd:complexType>
+      </xsd:element>
+
+      <xsd:element name="type">
+	<xsd:complexType>
+	  <xsd:sequence>
+	    <xsd:element maxOccurs="1" minOccurs="1" name="jobid" nillable="false" type="xsd:string" />
+	  </xsd:sequence>
+	</xsd:complexType>
+      </xsd:element>
+
+      <xsd:element name="jobStatus">
+	<xsd:complexType>
+	  <xsd:sequence>
+	    <xsd:element maxOccurs="1" minOccurs="1" name="status" nillable="false" type="xsd:int" />
+	  </xsd:sequence>
+	</xsd:complexType>
+      </xsd:element>
+
+      <xsd:element name="dblist">
+	<xsd:complexType>
+	  <xsd:sequence>
+	    <xsd:element maxOccurs="1" minOccurs="1" name="dbList" nillable="false" type="xsd:string" />
+	  </xsd:sequence>
+	</xsd:complexType>
+      </xsd:element>
+
+    </xsd:schema>
+  </wsdl:types>
+
+
+  <wsdl:message name="runBlastRequest">
+    <wsdl:part name="parameters" element="tns:runBlast" />
+  </wsdl:message>
+  <wsdl:message name="runBlastResponse">
+    <wsdl:part name="jobid" element="tns:jobID" />
+  </wsdl:message>
+
+  <wsdl:message name="runCentroidfoldRequest">
+    <wsdl:part name="parameters" element="tns:runCentroidfold" />
+  </wsdl:message>
+  <wsdl:message name="runCentroidfoldResponse">
+    <wsdl:part name="jobid" element="tns:jobID" />
+  </wsdl:message>
+
+  <wsdl:message name="runClustalwRequest">
+    <wsdl:part name="parameters" element="tns:runClustalw" />
+  </wsdl:message>
+  <wsdl:message name="runClustalwResponse">
+    <wsdl:part name="jobid" element="tns:jobID" />
+  </wsdl:message>
+
+  <wsdl:message name="runFetchDataRequest">
+    <wsdl:part name="parameters" element="tns:runFetchData" />
+  </wsdl:message>
+  <wsdl:message name="runFetchDataResponse">
+    <wsdl:part name="jobid" element="tns:jobID" />
+  </wsdl:message>
+
+  <wsdl:message name="runFetchBatchRequest">
+    <wsdl:part name="parameters" element="tns:runFetchBatch" />
+  </wsdl:message>
+  <wsdl:message name="runFetchBatchResponse">
+    <wsdl:part name="jobid" element="tns:jobID" />
+  </wsdl:message>
+
+  <wsdl:message name="runGenemarkhmmRequest">
+    <wsdl:part name="parameters" element="tns:runGenemarkhmm" />
+  </wsdl:message>
+  <wsdl:message name="runGenemarkhmmResponse">
+    <wsdl:part name="jobid" element="tns:jobID" />
+  </wsdl:message>
+
+  <wsdl:message name="runGlimmerRequest">
+    <wsdl:part name="parameters" element="tns:runGlimmer" />
+  </wsdl:message>
+  <wsdl:message name="runGlimmerResponse">
+    <wsdl:part name="jobid" element="tns:jobID" />
+  </wsdl:message>
+
+  <wsdl:message name="runKalignRequest">
+    <wsdl:part name="parameters" element="tns:runKalign" />
+  </wsdl:message>
+  <wsdl:message name="runKalignResponse">
+    <wsdl:part name="jobid" element="tns:jobID" />
+  </wsdl:message>
+
+  <wsdl:message name="runMafftRequest">
+    <wsdl:part name="parameters" element="tns:runMafft" />
+  </wsdl:message>
+  <wsdl:message name="runMafftResponse">
+    <wsdl:part name="jobid" element="tns:jobID" />
+  </wsdl:message>
+
+  <wsdl:message name="runMuscleRequest">
+    <wsdl:part name="parameters" element="tns:runMuscle" />
+  </wsdl:message>
+  <wsdl:message name="runMuscleResponse">
+    <wsdl:part name="jobid" element="tns:jobID" />
+  </wsdl:message>
+
+  <wsdl:message name="runPhobiusRequest">
+    <wsdl:part name="parameters" element="tns:runPhobius" />
+  </wsdl:message>
+  <wsdl:message name="runPhobiusResponse">
+    <wsdl:part name="jobid" element="tns:jobID" />
+  </wsdl:message>
+
+  <wsdl:message name="runProtparsRequest">
+    <wsdl:part name="parameters" element="tns:runProtpars" />
+  </wsdl:message>
+  <wsdl:message name="runProtparsResponse">
+    <wsdl:part name="jobid" element="tns:jobID" />
+  </wsdl:message>
+
+  <wsdl:message name="runProtdistRequest">
+    <wsdl:part name="parameters" element="tns:runProtdist" />
+  </wsdl:message>
+  <wsdl:message name="runProtdistResponse">
+    <wsdl:part name="jobid" element="tns:jobID" />
+  </wsdl:message>
+
+  <wsdl:message name="runDnaparsRequest">
+    <wsdl:part name="parameters" element="tns:runDnapars" />
+  </wsdl:message>
+  <wsdl:message name="runDnaparsResponse">
+    <wsdl:part name="jobid" element="tns:jobID" />
+  </wsdl:message>
+
+  <wsdl:message name="runDnapennyRequest">
+    <wsdl:part name="parameters" element="tns:runDnapenny" />
+  </wsdl:message>
+  <wsdl:message name="runDnapennyResponse">
+    <wsdl:part name="jobid" element="tns:jobID" />
+  </wsdl:message>
+
+  <wsdl:message name="runDnacompRequest">
+    <wsdl:part name="parameters" element="tns:runDnacomp" />
+  </wsdl:message>
+  <wsdl:message name="runDnacompResponse">
+    <wsdl:part name="jobid" element="tns:jobID" />
+  </wsdl:message>
+
+  <wsdl:message name="runDnainvarRequest">
+    <wsdl:part name="parameters" element="tns:runDnainvar" />
+  </wsdl:message>
+  <wsdl:message name="runDnainvarResponse">
+    <wsdl:part name="jobid" element="tns:jobID" />
+  </wsdl:message>
+
+  <wsdl:message name="runDnamlRequest">
+    <wsdl:part name="parameters" element="tns:runDnaml" />
+  </wsdl:message>
+  <wsdl:message name="runDnamlResponse">
+    <wsdl:part name="jobid" element="tns:jobID" />
+  </wsdl:message>
+
+  <wsdl:message name="runDnamlkRequest">
+    <wsdl:part name="parameters" element="tns:runDnamlk" />
+  </wsdl:message>
+  <wsdl:message name="runDnamlkResponse">
+    <wsdl:part name="jobid" element="tns:jobID" />
+  </wsdl:message>
+
+  <wsdl:message name="runDnadistRequest">
+    <wsdl:part name="parameters" element="tns:runDnadist" />
+  </wsdl:message>
+  <wsdl:message name="runDnadistResponse">
+    <wsdl:part name="jobid" element="tns:jobID" />
+  </wsdl:message>
+
+  <wsdl:message name="runGendistRequest">
+    <wsdl:part name="parameters" element="tns:runGendist" />
+  </wsdl:message>
+  <wsdl:message name="runGendistResponse">
+    <wsdl:part name="jobid" element="tns:jobID" />
+  </wsdl:message>
+
+  <wsdl:message name="runSeqbootRequest">
+    <wsdl:part name="parameters" element="tns:runSeqboot" />
+  </wsdl:message>
+  <wsdl:message name="runSeqbootResponse">
+    <wsdl:part name="jobid" element="tns:jobID" />
+  </wsdl:message>
+
+  <wsdl:message name="runRestmlRequest">
+    <wsdl:part name="parameters" element="tns:runRestml" />
+  </wsdl:message>
+  <wsdl:message name="runRestmlResponse">
+    <wsdl:part name="jobid" element="tns:jobID" />
+  </wsdl:message>
+
+  <wsdl:message name="runCliqueRequest">
+    <wsdl:part name="parameters" element="tns:runClique" />
+  </wsdl:message>
+  <wsdl:message name="runCliqueResponse">
+    <wsdl:part name="jobid" element="tns:jobID" />
+  </wsdl:message>
+
+  <wsdl:message name="runFitchRequest">
+    <wsdl:part name="parameters" element="tns:runFitch" />
+  </wsdl:message>
+  <wsdl:message name="runFitchResponse">
+    <wsdl:part name="jobid" element="tns:jobID" />
+  </wsdl:message>
+
+  <wsdl:message name="runKitschRequest">
+    <wsdl:part name="parameters" element="tns:runKitsch" />
+  </wsdl:message>
+  <wsdl:message name="runKitschResponse">
+    <wsdl:part name="jobid" element="tns:jobID" />
+  </wsdl:message>
+
+  <wsdl:message name="runNeighborRequest">
+    <wsdl:part name="parameters" element="tns:runNeighbor" />
+  </wsdl:message>
+  <wsdl:message name="runNeighborResponse">
+    <wsdl:part name="jobid" element="tns:jobID" />
+  </wsdl:message>
+
+  <wsdl:message name="runContmlRequest">
+    <wsdl:part name="parameters" element="tns:runContml" />
+  </wsdl:message>
+  <wsdl:message name="runContmlResponse">
+    <wsdl:part name="jobid" element="tns:jobID" />
+  </wsdl:message>
+
+  <wsdl:message name="runMixRequest">
+    <wsdl:part name="parameters" element="tns:runMix" />
+  </wsdl:message>
+  <wsdl:message name="runMixResponse">
+    <wsdl:part name="jobid" element="tns:jobID" />
+  </wsdl:message>
+
+  <wsdl:message name="runPennyRequest">
+    <wsdl:part name="parameters" element="tns:runPenny" />
+  </wsdl:message>
+  <wsdl:message name="runPennyResponse">
+    <wsdl:part name="jobid" element="tns:jobID" />
+  </wsdl:message>
+
+  <wsdl:message name="runDollopRequest">
+    <wsdl:part name="parameters" element="tns:runDollop" />
+  </wsdl:message>
+  <wsdl:message name="runDollopResponse">
+    <wsdl:part name="jobid" element="tns:jobID" />
+  </wsdl:message>
+
+  <wsdl:message name="runDolpennyRequest">
+    <wsdl:part name="parameters" element="tns:runDolpenny" />
+  </wsdl:message>
+  <wsdl:message name="runDolpennyResponse">
+    <wsdl:part name="jobid" element="tns:jobID" />
+  </wsdl:message>
+
+  <wsdl:message name="runPsortRequest">
+    <wsdl:part name="parameters" element="tns:runPsort" />
+  </wsdl:message>
+  <wsdl:message name="runPsortResponse">
+    <wsdl:part name="jobid" element="tns:jobID" />
+  </wsdl:message>
+
+  <wsdl:message name="runPsort2Request">
+    <wsdl:part name="parameters" element="tns:runPsort2" />
+  </wsdl:message>
+  <wsdl:message name="runPsort2Response">
+    <wsdl:part name="jobid" element="tns:jobID" />
+  </wsdl:message>
+
+  <wsdl:message name="runPsortbRequest">
+    <wsdl:part name="parameters" element="tns:runPsortb" />
+  </wsdl:message>
+  <wsdl:message name="runPsortbResponse">
+    <wsdl:part name="jobid" element="tns:jobID" />
+  </wsdl:message>
+
+  <wsdl:message name="runSsearchRequest">
+    <wsdl:part name="parameters" element="tns:runSsearch" />
+  </wsdl:message>
+  <wsdl:message name="runSsearchResponse">
+    <wsdl:part name="jobid" element="tns:jobID" />
+  </wsdl:message>
+
+  <wsdl:message name="runTcoffeeRequest">
+    <wsdl:part name="parameters" element="tns:runTcoffee" />
+  </wsdl:message>
+  <wsdl:message name="runTcoffeeResponse">
+    <wsdl:part name="jobid" element="tns:jobID" />
+  </wsdl:message>
+
+  <wsdl:message name="runtRNAscanRequest">
+    <wsdl:part name="parameters" element="tns:runtRNAscan" />
+  </wsdl:message>
+  <wsdl:message name="runtRNAscanResponse">
+    <wsdl:part name="jobid" element="tns:jobID" />
+  </wsdl:message>
+
+  <wsdl:message name="runWeblogoRequest">
+    <wsdl:part name="parameters" element="tns:runWeblogo" />
+  </wsdl:message>
+  <wsdl:message name="runWeblogoResponse">
+    <wsdl:part name="jobid" element="tns:jobID" />
+  </wsdl:message>
+
+  <wsdl:message name="runWolfPsortRequest">
+    <wsdl:part name="parameters" element="tns:runWolfPsort" />
+  </wsdl:message>
+  <wsdl:message name="runWolfPsortResponse">
+    <wsdl:part name="jobid" element="tns:jobID" />
+  </wsdl:message>
+
+  <wsdl:message name="runRNAfoldRequest">
+    <wsdl:part name="parameters" element="tns:runRNAfold" />
+  </wsdl:message>
+  <wsdl:message name="runRNAfoldResponse">
+    <wsdl:part name="jobid" element="tns:jobID" />
+  </wsdl:message>
+
+  <wsdl:message name="showBlastDBRequest">
+    <wsdl:part name="parameters" element="tns:showBlastDB" />
+  </wsdl:message>
+  <wsdl:message name="showBlastDBResponse">
+    <wsdl:part name="dblist" element="tns:dblist" />
+  </wsdl:message>
+
+  <wsdl:message name="map2PathwayProjectorRequest">
+    <wsdl:part name="parameters" element="tns:map2PathwayProjector" />
+  </wsdl:message>
+  <wsdl:message name="map2PathwayProjectorResponse">
+    <wsdl:part name="jobid" element="tns:jobID" />
+  </wsdl:message>
+
+  <wsdl:message name="checkStatusRequest">
+    <wsdl:part name="jobid" element="tns:checkStatus" />
+  </wsdl:message>
+  <wsdl:message name="checkStatusResponse">
+    <wsdl:part name="status" element="tns:jobStatus" />
+  </wsdl:message>
+
+  <wsdl:message name="checkStatus_retJobidRequest">
+    <wsdl:part name="jobid_in" element="tns:checkStatus_retJobid" />
+  </wsdl:message>
+  <wsdl:message name="checkStatus_retJobidResponse">
+    <wsdl:part name="jobid_out" element="tns:jobID" />
+  </wsdl:message>
+
+  <wsdl:message name="getResultRequest">
+    <wsdl:part  name="jobid" element="tns:getResult" />
+  </wsdl:message>
+  <wsdl:message name="getResultResponse">
+    <wsdl:part  name="result" element="tns:result" />
+  </wsdl:message>
+
+  <wsdl:message name="getMultiResultRequest">
+    <wsdl:part  name="jobid" element="tns:getMultiResult" />
+  </wsdl:message>
+  <wsdl:message name="getMultiResultResponse">
+    <wsdl:part  name="result" element="tns:result" />
+  </wsdl:message>
+
+
+  <wsdl:portType name="KBWS">
+
+    <wsdl:operation name="runBlast">
+      <wsdl:input  name="runBlastRequest"  message="tns:runBlastRequest"  />
+      <wsdl:output name="runBlastResponse" message="tns:runBlastResponse" />
+    </wsdl:operation>
+
+    <wsdl:operation name="runCentroidfold">
+      <wsdl:input  name="runCentroidfoldRequest"  message="tns:runCentroidfoldRequest"  />
+      <wsdl:output name="runCentroidfoldResponse" message="tns:runCentroidfoldResponse" />
+    </wsdl:operation>
+
+    <wsdl:operation name="runClustalw">
+      <wsdl:input  name="runClustalwRequest"  message="tns:runClustalwRequest"  />
+      <wsdl:output name="runClustalwResponse" message="tns:runClustalwResponse" />
+    </wsdl:operation>
+
+    <wsdl:operation name="runFetchData">
+      <wsdl:input  name="runFetchDataRequest"  message="tns:runFetchDataRequest"  />
+      <wsdl:output name="runFetchDataResponse" message="tns:runFetchDataResponse" />
+    </wsdl:operation>
+
+    <wsdl:operation name="runFetchBatch">
+      <wsdl:input  name="runFetchBatchRequest"  message="tns:runFetchBatchRequest"  />
+      <wsdl:output name="runFetchBatchResponse" message="tns:runFetchBatchResponse" />
+    </wsdl:operation>
+
+    <wsdl:operation name="runGenemarkhmm">
+      <wsdl:input  name="runGenemarkhmmRequest"  message="tns:runGenemarkhmmRequest"  />
+      <wsdl:output name="runGenemarkhmmResponse" message="tns:runGenemarkhmmResponse" />
+    </wsdl:operation>
+
+    <wsdl:operation name="runGlimmer">
+      <wsdl:input  name="runGlimmerRequest"  message="tns:runGlimmerRequest"  />
+      <wsdl:output name="runGlimmerResponse" message="tns:runGlimmerResponse" />
+    </wsdl:operation>
+
+    <wsdl:operation name="runKalign">
+      <wsdl:input  name="runKalignRequest"  message="tns:runKalignRequest"  />
+      <wsdl:output name="runKalignResponse" message="tns:runKalignResponse" />
+    </wsdl:operation>
+
+    <wsdl:operation name="runMafft">
+      <wsdl:input  name="runMafftRequest"  message="tns:runMafftRequest"  />
+      <wsdl:output name="runMafftResponse" message="tns:runMafftResponse" />
+    </wsdl:operation>
+
+    <wsdl:operation name="runMuscle">
+      <wsdl:input  name="runMuscleRequest"  message="tns:runMuscleRequest"  />
+      <wsdl:output name="runMuscleResponse" message="tns:runMuscleResponse" />
+    </wsdl:operation>
+
+    <wsdl:operation name="runPhobius">
+      <wsdl:input  name="runPhobiusRequest"  message="tns:runPhobiusRequest"  />
+      <wsdl:output name="runPhobiusResponse" message="tns:runPhobiusResponse" />
+    </wsdl:operation>
+
+    <wsdl:operation name="runProtpars">
+      <wsdl:input  name="runProtparsRequest"  message="tns:runProtparsRequest"  />
+      <wsdl:output name="runProtparsResponse" message="tns:runProtparsResponse" />
+    </wsdl:operation>
+
+    <wsdl:operation name="runProtdist">
+      <wsdl:input  name="runProtdistRequest"  message="tns:runProtdistRequest"  />
+      <wsdl:output name="runProtdistResponse" message="tns:runProtdistResponse" />
+    </wsdl:operation>
+
+    <wsdl:operation name="runDnapars">
+      <wsdl:input  name="runDnaparsRequest"  message="tns:runDnaparsRequest"  />
+      <wsdl:output name="runDnaparsResponse" message="tns:runDnaparsResponse" />
+    </wsdl:operation>
+
+    <wsdl:operation name="runDnapenny">
+      <wsdl:input  name="runDnapennyRequest"  message="tns:runDnapennyRequest"  />
+      <wsdl:output name="runDnapennyResponse" message="tns:runDnapennyResponse" />
+    </wsdl:operation>
+
+    <wsdl:operation name="runDnacomp">
+      <wsdl:input  name="runDnacompRequest"  message="tns:runDnacompRequest"  />
+      <wsdl:output name="runDnacompResponse" message="tns:runDnacompResponse" />
+    </wsdl:operation>
+
+    <wsdl:operation name="runDnainvar">
+      <wsdl:input  name="runDnainvarRequest"  message="tns:runDnainvarRequest"  />
+      <wsdl:output name="runDnainvarResponse" message="tns:runDnainvarResponse" />
+    </wsdl:operation>
+
+    <wsdl:operation name="runDnaml">
+      <wsdl:input  name="runDnamlRequest"  message="tns:runDnamlRequest"  />
+      <wsdl:output name="runDnamlResponse" message="tns:runDnamlResponse" />
+    </wsdl:operation>
+
+    <wsdl:operation name="runDnamlk">
+      <wsdl:input  name="runDnamlkRequest"  message="tns:runDnamlkRequest"  />
+      <wsdl:output name="runDnamlkResponse" message="tns:runDnamlkResponse" />
+    </wsdl:operation>
+
+    <wsdl:operation name="runDnadist">
+      <wsdl:input  name="runDnadistRequest"  message="tns:runDnadistRequest"  />
+      <wsdl:output name="runDnadistResponse" message="tns:runDnadistResponse" />
+    </wsdl:operation>
+
+    <wsdl:operation name="runGendist">
+      <wsdl:input  name="runGendistRequest"  message="tns:runGendistRequest"  />
+      <wsdl:output name="runGendistResponse" message="tns:runGendistResponse" />
+    </wsdl:operation>
+
+    <wsdl:operation name="runSeqboot">
+      <wsdl:input  name="runSeqbootRequest"  message="tns:runSeqbootRequest"  />
+      <wsdl:output name="runSeqbootResponse" message="tns:runSeqbootResponse" />
+    </wsdl:operation>
+
+    <wsdl:operation name="runRestml">
+      <wsdl:input  name="runRestmlRequest"  message="tns:runRestmlRequest"  />
+      <wsdl:output name="runRestmlResponse" message="tns:runRestmlResponse" />
+    </wsdl:operation>
+
+    <wsdl:operation name="runClique">
+      <wsdl:input  name="runCliqueRequest"  message="tns:runCliqueRequest"  />
+      <wsdl:output name="runCliqueResponse" message="tns:runCliqueResponse" />
+    </wsdl:operation>
+
+    <wsdl:operation name="runFitch">
+      <wsdl:input  name="runFitchRequest"  message="tns:runFitchRequest"  />
+      <wsdl:output name="runFitchResponse" message="tns:runFitchResponse" />
+    </wsdl:operation>
+
+    <wsdl:operation name="runKitsch">
+      <wsdl:input  name="runKitschRequest"  message="tns:runKitschRequest"  />
+      <wsdl:output name="runKitschResponse" message="tns:runKitschResponse" />
+    </wsdl:operation>
+
+    <wsdl:operation name="runNeighbor">
+      <wsdl:input  name="runNeighborRequest"  message="tns:runNeighborRequest"  />
+      <wsdl:output name="runNeighborResponse" message="tns:runNeighborResponse" />
+    </wsdl:operation>
+
+    <wsdl:operation name="runContml">
+      <wsdl:input  name="runContmlRequest"  message="tns:runContmlRequest"  />
+      <wsdl:output name="runContmlResponse" message="tns:runContmlResponse" />
+    </wsdl:operation>
+
+    <wsdl:operation name="runMix">
+      <wsdl:input  name="runMixRequest"  message="tns:runMixRequest"  />
+      <wsdl:output name="runMixResponse" message="tns:runMixResponse" />
+    </wsdl:operation>
+
+    <wsdl:operation name="runPenny">
+      <wsdl:input  name="runPennyRequest"  message="tns:runPennyRequest"  />
+      <wsdl:output name="runPennyResponse" message="tns:runPennyResponse" />
+    </wsdl:operation>
+
+    <wsdl:operation name="runDollop">
+      <wsdl:input  name="runDollopRequest"  message="tns:runDollopRequest"  />
+      <wsdl:output name="runDollopResponse" message="tns:runDollopResponse" />
+    </wsdl:operation>
+
+    <wsdl:operation name="runDolpenny">
+      <wsdl:input  name="runDolpennyRequest"  message="tns:runDolpennyRequest"  />
+      <wsdl:output name="runDolpennyResponse" message="tns:runDolpennyResponse" />
+    </wsdl:operation>
+
+    <wsdl:operation name="runPsort">
+      <wsdl:input  name="runPsortRequest"  message="tns:runPsortRequest"  />
+      <wsdl:output name="runPsortResponse" message="tns:runPsortResponse" />
+    </wsdl:operation>
+
+    <wsdl:operation name="runPsort2">
+      <wsdl:input  name="runPsort2Request"  message="tns:runPsort2Request"  />
+      <wsdl:output name="runPsort2Response" message="tns:runPsort2Response" />
+    </wsdl:operation>
+
+    <wsdl:operation name="runPsortb">
+      <wsdl:input  name="runPsortbRequest"  message="tns:runPsortbRequest"  />
+      <wsdl:output name="runPsortbResponse" message="tns:runPsortbResponse" />
+    </wsdl:operation>
+
+    <wsdl:operation name="runSsearch">
+      <wsdl:input  name="runSsearchRequest"  message="tns:runSsearchRequest"  />
+      <wsdl:output name="runSsearchResponse" message="tns:runSsearchResponse" />
+    </wsdl:operation>
+
+    <wsdl:operation name="runTcoffee">
+      <wsdl:input  name="runTcoffeeRequest"  message="tns:runTcoffeeRequest"  />
+      <wsdl:output name="runTcoffeeResponse" message="tns:runTcoffeeResponse" />
+    </wsdl:operation>
+
+    <wsdl:operation name="runtRNAscan">
+      <wsdl:input  name="runtRNAscanRequest"  message="tns:runtRNAscanRequest"  />
+      <wsdl:output name="runtRNAscanResponse" message="tns:runtRNAscanResponse" />
+    </wsdl:operation>
+
+    <wsdl:operation name="runWeblogo">
+      <wsdl:input  name="runWeblogoRequest"  message="tns:runWeblogoRequest"  />
+      <wsdl:output name="runWeblogoResponse" message="tns:runWeblogoResponse" />
+    </wsdl:operation>
+
+    <wsdl:operation name="runWolfPsort">
+      <wsdl:input  name="runWolfPsortRequest"  message="tns:runWolfPsortRequest"  />
+      <wsdl:output name="runWolfPsortResponse" message="tns:runWolfPsortResponse" />
+    </wsdl:operation>
+
+    <wsdl:operation name="runRNAfold">
+      <wsdl:input  name="runRNAfoldRequest"  message="tns:runRNAfoldRequest"  />
+      <wsdl:output name="runRNAfoldResponse" message="tns:runRNAfoldResponse" />
+    </wsdl:operation>
+
+    <wsdl:operation name="showBlastDB">
+      <wsdl:input  name="showBlastDBRequest"  message="tns:showBlastDBRequest"  />
+      <wsdl:output name="showBlastDBResponse" message="tns:showBlastDBResponse" />
+    </wsdl:operation>
+
+    <wsdl:operation name="map2PathwayProjector">
+      <wsdl:input  name="map2PathwayProjectorRequest"  message="tns:map2PathwayProjectorRequest"  />
+      <wsdl:output name="map2PathwayProjectorResponse" message="tns:map2PathwayProjectorResponse" />
+    </wsdl:operation>
+
+
+    <wsdl:operation name="checkStatus">
+      <wsdl:input   name="checkStatusRequest"  message="tns:checkStatusRequest"  />
+      <wsdl:output name="checkStatusResponse" message="tns:checkStatusResponse" />
+    </wsdl:operation>
+
+    <wsdl:operation name="checkStatus_retJobid">
+      <wsdl:input   name="checkStatus_retJobidRequest"  message="tns:checkStatus_retJobidRequest"  />
+      <wsdl:output name="checkStatus_retJobidResponse" message="tns:checkStatus_retJobidResponse" />
+    </wsdl:operation>
+
+    <wsdl:operation name="getResult">
+      <wsdl:input   name="getResultRequest"  message="tns:getResultRequest"  />
+      <wsdl:output name="getResultResponse" message="tns:getResultResponse" />
+    </wsdl:operation>
+
+    <wsdl:operation name="getMultiResult">
+      <wsdl:input   name="getMultiResultRequest"  message="tns:getMultiResultRequest"  />
+      <wsdl:output name="getMultiResultResponse" message="tns:getMultiResultResponse" />
+    </wsdl:operation>
+
+  </wsdl:portType>
+
+  <wsdl:binding name="KBWSHttpBinding" type="tns:KBWS">
+    <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+
+    <wsdl:operation name="runBlast">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="runBlastRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="runBlastResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="runCentroidfold">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="runCentroidfoldRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="runCentroidfoldResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="runClustalw">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="runClustalwRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="runClustalwResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="runFetchData">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="runFetchDataRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="runFetchDataResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="runFetchBatch">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="runFetchBatchRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="runFetchBatchResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="runGenemarkhmm">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="runGenemarkhmmRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="runGenemarkhmmResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="runGlimmer">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="runGlimmerRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="runGlimmerResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="runKalign">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="runKalignRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="runKalignResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="runMafft">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="runMafftRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="runMafftResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="runMuscle">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="runMuscleRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="runMuscleResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="runPhobius">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="runPhobiusRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="runPhobiusResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="runProtpars">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="runProtparsRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="runProtparsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="runProtdist">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="runProtdistRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="runProtdistResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="runDnapars">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="runDnaparsRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="runDnaparsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="runDnapenny">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="runDnapennyRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="runDnapennyResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="runDnacomp">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="runDnacompRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="runDnacompResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="runDnainvar">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="runDnainvarRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="runDnainvarResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="runDnaml">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="runDnamlRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="runDnamlResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="runDnamlk">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="runDnamlkRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="runDnamlkResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="runDnadist">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="runDnadistRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="runDnadistResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="runGendist">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="runGendistRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="runGendistResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="runSeqboot">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="runSeqbootRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="runSeqbootResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="runRestml">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="runRestmlRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="runRestmlResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="runClique">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="runCliqueRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="runCliqueResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="runFitch">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="runFitchRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="runFitchResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="runKitsch">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="runKitschRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="runKitschResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="runNeighbor">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="runNeighborRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="runNeighborResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="runContml">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="runContmlRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="runContmlResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="runMix">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="runMixRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="runMixResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="runPenny">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="runPennyRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="runPennyResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="runDollop">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="runDollopRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="runDollopResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="runDolpenny">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="runDolpennyRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="runDolpennyResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="runPsort">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="runPsortRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="runPsortResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="runPsort2">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="runPsort2Request">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="runPsort2Response">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="runPsortb">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="runPsortbRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="runPsortbResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="runSsearch">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="runSsearchRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="runSsearchResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="runTcoffee">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="runTcoffeeRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="runTcoffeeResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="runtRNAscan">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="runtRNAscanRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="runtRNAscanResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="runWeblogo">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="runWeblogoRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="runWeblogoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="runWolfPsort">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="runWolfPsortRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="runWolfPsortResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="runRNAfold">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="runRNAfoldRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="runRNAfoldResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="showBlastDB">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="showBlastDBRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="showBlastDBResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="map2PathwayProjector">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="map2PathwayProjectorRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="map2PathwayProjectorResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="checkStatus">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="checkStatusRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="checkStatusResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="checkStatus_retJobid">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="checkStatus_retJobidRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="checkStatus_retJobidResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="getResult">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getResultRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getResultResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="getMultiResult">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getMultiResultRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getMultiResultResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+
+  </wsdl:binding>
+
+  <wsdl:service name="KBWS">
+    <wsdl:port name="KBWSHttpPort" binding="tns:KBWSHttpBinding">
+      <soap:address location="http://soap.g-language.org/kbws/kbws.cgi" />
+    </wsdl:port>
+  </wsdl:service>
+
+</wsdl:definitions>
+

@@ -1,0 +1,159 @@
+# embossrc (without SRS database)
+
+# For setting up following databases, please download this file
+# and save as "~/.embossrc" on your home directory.
+
+# By default EMBOSS is installed at /usr/local but the directory can
+# be changed with --prefix when you configure EMBOSS.
+
+# SET emboss_acdroot $YOUR_PREFIX/share/EMBOSS/acd
+# SET embossdata     $YOUR_PREFIX/share/EMBOS/data
+
+SET emboss_acdroot /usr/local/share/EMBOSS/acd
+SET emboss_data /usr/local/share/EMBOSS/data
+
+# Nucleotide
+DB embl [ 
+  type: N 
+  format: embl 
+  method: url
+  dbalias: EMBL
+  fields: "sv des org key"
+  url: "http://srs.ebi.ac.uk/srsbin/cgi-bin/wgetz?-e+[EMBL-all:'%s']+-ascii+1"
+  comment: "Database of nucleotide sequence in Europe."
+]
+
+DB genbankn [
+  type: N
+  format: genbank
+  method: url
+  url: "http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nucleotide&rettype=gb&retmode=text&id=%s"
+  dbalias: GENBANKN
+  comment: "The NIH genetic sequence database, an annotated collection of all publicly
+            available DNA sequences."
+]
+
+DB refseqn [
+  type: N 
+  format: genbank
+  method: url
+  dbalias: REFSEQN
+  fields: "sv des org key"
+  url: "http://srs.ebi.ac.uk/srsbin/cgi-bin/wgetz?-e+[REFSEQGENREL:'%s']+-ascii+1"
+  comment: "Database providing non-redundant curated data representing knowledge of known genes."
+]
+
+DB ddbj [
+  type: N
+  format: genbank
+  method: url
+  dbalias: DDBJ
+  fields: "sv des org key"
+  url: "http://xml.nig.ac.jp/rest/Invoke?service=GetEntry&method=getDDBJEntry&accession=%s"
+  comment: "Database of nucleotide sequence in Japan."
+]
+
+DB fantom2 [
+  type: N
+  format: fasta
+  method: url
+  dbalias: FANTOM2
+  fields: "des"
+  url: "http://fantom2.gsc.riken.jp/db/annotate/seqview.cgi?type=cdnaseq&masterid=%s"
+  comment: "Functional Annotation of the Mammalian Genome (FANTOM) 2"
+]
+
+DB fantom3 [
+  type: N
+  format: fasta
+  method: url
+  dbalias: FANTOM3
+  fields: "des"
+  url: "http://fantom3.gsc.riken.jp/db/reference/content.cgi?category=dnaseq&masterid=%s"
+  comment: "Functional Annotation of the Mammalian Genome (FANTOM) 3"
+]
+
+# Protein
+DB uniprotkb [
+  type: P 
+  format: swiss
+  method: url
+  dbalias: UNIPROTKB
+  fields: "sv des org key"
+  url: "http://srs.ebi.ac.uk/srsbin/cgi-bin/wgetz?-e+[UNIPROT-all:'%s']+-vn+2+-ascii"
+  comment: "The central hub for the collection of functional information on proteins,
+            with accurate, consistent and rich annotation."
+]
+
+DB refseqp [ 
+  type: P 
+  format: genbank
+  method: url
+  dbalias: REFSEQP
+  fields: "sv des org key"
+  url: "http://srs.ebi.ac.uk/srsbin/cgi-bin/wgetz?-e+[REFSEQP:'%s']+-ascii"
+  comment: "Database of protein information from REFSEQ."
+]
+
+DB genbankp [
+  type: P 
+  format: genbank
+  method: url
+  dbalias: GENBANKP
+  url: "http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=protein&rettype=gb&retmode=text&id=%s"
+  comment: "Database of protein information from GENBANK"
+]
+
+DB swissprot [
+  type: P 
+  format: swiss
+  method: url
+  dbalias: SWISSPROT
+  fields: "sv des org key"
+  url: "http://srs.ebi.ac.uk/srsbin/cgi-bin/wgetz?-e+[SWISSPROT-all:'%s']+-vn+2+-ascii"
+  comment: "Database of protein sequences produced collaboratively by the Swiss
+            Institute for Bioinformatics (SIB) and the European Bioinformatics
+            Institute (EBI)."
+]
+
+DB swall [
+  type: P 
+  format: swiss
+  method: url
+  dbalias: SWALL
+  fields: "sv des org key"
+  url: "http://srs.ebi.ac.uk/srsbin/cgi-bin/wgetz?-e+[SWALL-all:'%s']+-vn+2+-ascii"
+  comment: "A combined database of Swiss-Prot, SPTREMBL and TREMBLNEW. Does not contain REMTREMBL."
+]
+
+DB sw [
+  type: P
+  format: swiss
+  method: url
+  dbalias: SW
+  fields: "sv des org key"
+  url: "http://srs.ebi.ac.uk/srsbin/cgi-bin/wgetz?-e+[SWALL-all:'%s']+-vn+2+-ascii"
+  comment: "A combined database of Swiss-Prot, SPTREMBL and TREMBLNEW. Does not contain REMTREMBL."
+]
+
+DB uniparc [
+  type: P
+  format: swiss
+  method: url
+  dbalias: UNIPARC
+  fields: "sv des org key"
+  url: "http://srs.ebi.ac.uk/srsbin/cgi-bin/wgetz?-e+[UNIPARC:'%s']+-ascii+-view+UniParc2Flat"
+  comment: "A comprehensive and non-redundant database that contains most of the publicly available protein sequences."
+]
+
+DB pir [ 
+  type: P 
+  format: pir
+  method: url
+  dbalias: PIR
+  fields: "sv des org key"
+  url: "http://srs.ebi.ac.uk/srsbin/cgi-bin/wgetz?-e+[PIR:'%s']+-ascii"
+  comment: "Protein Identification Resource."
+]
+
+# SET emboss_proxy "10.3.1.1:8080"

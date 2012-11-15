@@ -1,0 +1,6 @@
+.prove
+bin
+*swp
+*~
+.DS_Store
+result/*

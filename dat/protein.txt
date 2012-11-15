@@ -1,0 +1,53 @@
+DDBJ:DAD -> DAD data
+DDBJ:PDB -> PDB data
+DDBJ:PDBSH -> PDBSH data
+DDBJ:PRF -> PRF data
+DDBJ:PROTEIN -> PROTEIN data
+DDBJ:SWISS -> SWISSPROT data
+DDBJ:WORMPEP -> WORM PEPTIDE data
+DDBJ:UNIPROT -> UNIPROT data
+DDBJ:TREMBL -> TREMBL data
+EBI:uniprotkb -> UniProt Knowledgebase
+EBI:uniprotkb_swissprot -> UniProtKB/Swiss-Prot
+EBI:uniprotkb_swissprotsv -> UniProtKB/Swiss-Prot isoforms
+EBI:uniprotkb_trembl -> UniProtKB/TrEMBL
+EBI:uniprotkb_archaea -> UniProtKB Archaea
+EBI:uniprotkb_arthropoda -> UniProtKB Arthropoda
+EBI:uniprotkb_bacteria -> UniProtKB Bacteria
+EBI:uniprotkb_complete_microbial_proteomes -> UniProtKB Complete Microbial Proteomes
+EBI:uniprotkb_eukaryota -> UniProtKB Eukaryota
+EBI:uniprotkb_fungi -> UniProtKB Fungi
+EBI:uniprotkb_human -> UniProtKB Human
+EBI:uniprotkb_mammals -> UniProtKB Mammals
+EBI:uniprotkb_nematoda -> UniProtKB Nematoda
+EBI:uniprotkb_pdb -> UniProtKB PDB
+EBI:uniprotkb_rodents -> UniProtKB Rodents
+EBI:uniprotkb_vertebrates -> UniProtKB Vertebrates
+EBI:uniprotkb_viridiplantae -> UniProtKB Viridiplantae
+EBI:uniprotkb_viruses -> UniProtKB Viruses
+EBI:uniref100 -> UniProt Clusters 100%
+EBI:uniref100_seg -> UniProt Clusters 100% (SEG filtered)
+EBI:uniref90 -> UniProt Clusters 90%
+EBI:uniref50 -> UniProt Clusters 50%
+EBI:epop -> EPO Patent Protein Sequences
+EBI:jpop -> JPO Patent Protein Sequences
+EBI:kpop -> KIPO Patent Protein Sequences
+EBI:uspop -> USPTO Patent Protein Sequences
+EBI:nrpl1 -> NR Patent Proteins Level-1
+EBI:nrpl2 -> NR Patent Proteins Level-2
+EBI:pdb -> Protein Structure Sequences
+EBI:sgt -> Structural Genomics Targets
+EBI:uniparc -> UniProt Archive
+EBI:ipi -> International Protein Index
+EBI:intact -> IntAct
+EBI:imgthlap -> IMGT/HLA
+EBI:ipdkirp -> IPD-KIR
+NCBI:nr -> nr, protein
+NCBI:refseq_protein -> refseq protein
+NCBI:swissprot -> swissprot protein
+NCBI:pataa -> pat protein
+NCBI:pdbaa -> pdb protein
+NCBI:month.pataa -> month pat protein
+NCBI:monthaa -> month protein
+NCBI:alu -> alu repeat protein
+NCBI:env_nr -> env protein
