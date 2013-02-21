@@ -61,16 +61,24 @@ sub getMultiResult {
     my $type=  shift;
 
     if ($type eq '' || $type eq 'txt') {
-        $type = 'out';
+        $type= 'out';
     }
 
-    my $result = '';
+    my $result_file= "result/$jobid.$type";
+
+    my $result= '';
     if (_is_valid_jobid($jobid)) {
-	open my $FILE, '<', "./result/$jobid.$type";
-	while (<$FILE>) {
-	    $result .= $_;
+	if (-B './'.$result_file || $type eq 'eps' || $type eq 'pdf' || $type eq 'gif' || $type eq 'svg') {
+	    # result file is binary data or image file : return URL
+	    $result= 'http://soap.g-language.org/kbws/'.$result_file;
+	} else {
+	    # result file is not binary data (text data)
+	    open my $FILE, '<', $result_file;
+	    while (<$FILE>) {
+		$result .= $_;
+	    }
+	    close $FILE;
 	}
-	close $FILE;
     }
 
     return SOAP::Data->type('string')->value($result);
